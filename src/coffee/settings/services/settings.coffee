@@ -79,7 +79,7 @@ angular.module 'app.settings'
   streamPort: 0
   
   # 0 = Random
-  tmpLocation: path.join(os.tmpDir(), 'Popcorn-Time')
+  tmpLocation: path.join(os.tmpDir(), 'Butter')
   databaseLocation: path.join(data_path, 'data')
   deleteTmpOnClose: true
   automaticUpdating: true
@@ -116,7 +116,7 @@ angular.module 'app.settings'
         fingerprint: /"status":"online"/
       }
       {
-        url: 'http://api.popcorntime.io/'
+        url: 'http://api.butterproject.org/'
         ssl: false
         fingerprint: /"status":"online"/
       }
@@ -128,7 +128,7 @@ angular.module 'app.settings'
     ]
 
   updateEndpoint:
-    url: 'https://popcorntime.io/'
+    url: 'https://butterproject.org/'
     index: 0
     proxies: [
       {
