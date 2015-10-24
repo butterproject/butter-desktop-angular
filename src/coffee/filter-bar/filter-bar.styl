@@ -1,0 +1,33 @@
+pt-filter-bar
+    position relative
+    top 0 
+    height 120px
+    display block
+    transition background-color 300ms ease-in
+    
+    div
+        padding 20px 76px 20px 70px
+        -webkit-user-select: none
+        transition background-color 0.5s
+        z-index 1
+
+        &.fixed
+            position fixed
+            top 0
+            left 0
+            right 0
+            padding-left 170px
+            margin-top 0
+            background-color rgba(0, 0, 0, 0.8)
+
+        pt-filter-bar-item
+            display: inline-block
+
+            md-select
+                min-width 70px
+                margin-right 40px
+                color #fff
+                border none
+                font-size 20px
+                font-weight 600
+  

@@ -1,0 +1,17 @@
+<!-- Left Side -->
+<md-button ng-show="header.torrentId" ng-click="header.goBack()" class="back md-icon-button" role="button">
+    <md-icon md-font-set="material-icons" role="button" tabindex="0" aria-label="arrow-back">arrow_back</md-icon>
+</md-button>
+
+<div class="title">
+    {{ header.title }}
+</div>
+
+<!-- Right Side -->
+<md-button class="md-icon-button right-icon" role="button" ng-if="header.torrentId">
+    <md-icon>bookmark_outline</md-icon>
+</md-button>
+
+<md-button class="md-icon-button right-icon" role="button" ng-if="header.torrentId">
+    <md-icon>visibility_off</md-icon>
+</md-button>

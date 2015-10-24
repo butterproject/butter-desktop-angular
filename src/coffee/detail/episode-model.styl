@@ -1,0 +1,57 @@
+pt-episode-model
+    background-color #111214
+    font-family 'Roboto', sans-serif
+    &::shadow
+        #scroller
+            width 50vw
+            max-height 90vh
+            background-color #111214
+            padding 0
+    .modal-header
+        position relative
+        width 50vw
+        height 240px
+        overflow hidden
+        img
+            width 100%
+            margin-top -30px
+            height auto
+            opacity 0
+            transition: opacity .3s ease-in;
+            &.fadein
+                opacity 1
+        .overlay
+            position absolute
+            top 0
+            width 100%
+            height 100%
+            background linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,0.6) 100%);
+        h2, h3
+            position absolute
+            left 30px
+            color white
+            margin 0
+        h2
+            font-weight 500
+            font-size 36px
+            bottom 25px
+        h3
+            font-weight 600
+            font-size 16px
+            bottom 70px
+            letter-spacing: 0.3px
+    .episode-aired
+        padding 25px 30px 0
+        font-size 14px
+        color #FFF
+        opacity 0.7
+    .modal-description
+        padding 5px 30px 0
+        margin 0
+        font-size 14px
+        line-height 21px
+        color #FFF
+    md-button
+        margin 16px
+        color #FFF
+        float right

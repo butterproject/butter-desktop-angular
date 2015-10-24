@@ -1,0 +1,35 @@
+<section class="settings-panel" id="miscellaneous" ng-if="settings.config.showAdvancedSettings">
+    <div class="settings-panel-header">
+        Miscellaneous
+    </div>
+    
+    <div class="settings-panel-body">
+        <section class="settings-select">
+            <div class="select-label">Miscellaneous</div>
+            <md-select class="settings-dropdown" ng-model="settings.config.jump_to">
+                <md-option ng-repeat="jump_to in settings.tv_detail_jump_to" name="jump_to">{{ jump_to }}</md-option>
+            </md-select>
+            <p>When Opening TV Series Detail Jump To</p>
+        </section>
+
+        <md-input-container>
+            <label>Activate automatic updating</label>
+            <md-checkbox ng-model="settings.config.automaticUpdating"></md-checkbox>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Celebrate various events</label>
+            <md-checkbox ng-model="settings.config.events"></md-checkbox>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Minimize to Tray</label>
+            <md-checkbox ng-model="settings.config.minimizeToTray"></md-checkbox>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Big Picture Mode</label>
+            <md-checkbox ng-model="settings.config.bigPicture"></md-checkbox>
+        </md-input-container>
+    </div>
+</section>

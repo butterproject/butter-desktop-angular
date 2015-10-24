@@ -1,0 +1,9 @@
+<md-search-autocomplete style="position: fixed; right: 40px; top: 25px" text-change="searchTextChange(searchText)" text="searchText"></md-search-autocomplete>
+
+<div>
+  <pt-filter-bar-item ng-if="filters.list.types" items="filters.list.types" selected="filters.params.type" menu-open="filters.menuOpen" label='Type'></pt-filter-bar-item>
+
+  <pt-filter-bar-item ng-if="filters.list.genres" items="filters.list.genres" selected="filters.params.genre" menu-open="filters.menuOpen" label='Genre'></pt-filter-bar-item>
+
+  <pt-filter-bar-item ng-if="filters.list.sorters" items="filters.list.sorters" selected="filters.params.sort_by" menu-open="filters.menuOpen" label='Sort by'></pt-filter-bar-item>
+</div>

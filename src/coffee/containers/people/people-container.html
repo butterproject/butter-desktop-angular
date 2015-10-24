@@ -1,0 +1,13 @@
+<div class="people-container">
+    <div ng-repeat="person in people" class="people">
+        <div class="person-avatar">
+            <img ng-src="{{ person.avatar }}" alt="">
+        </div>
+        <p class="person">
+            {{ person.name }}
+        </p>
+        <p class="status">
+            as {{ person.show_name }}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<pt-page-header title="detail.config.title" torrent-id="detail.config.id" class="detail {{detail.type}}" go-back="detail.goBack()"></pt-page-header>
+
+<!-- Controls Container --> 
+<pt-controls-container ng-if="detail.currentTorrent"></pt-controls-container>
+
+<div layout="row" layout-sm="column" layout-align="space-around" ng-if="!detail.data" >
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+
+<div ng-if="detail.type === 'movie'" ng-show="detail.data" class="info-container movie">
+    <div class="info-wrapper no-seasons">
+        <!-- Poster Image -->
+        <img image-loaded ng-if="detail.data.images" ng-src="{{ detail.data.images.poster | traktSize:'thumb':detail.type }}" class="poster">
+        <!-- Meta Container -->
+        <pt-meta-container show="detail.data"></pt-meta-container>
+    </div>
+</div>
+
+<md-tabs ng-if="detail.type === 'show'" ng-show="detail.data" md-selected="detail.selectedSeason">
+    <md-tab class="md-title">
+        <md-tab-label>Show Info</md-tab-label>
+        <md-tab-body class="info-wrapper">
+            <!-- Poster Image -->
+            <img image-loaded ng-if="detail.data.images" ng-src="{{ detail.data.images.poster | traktSize:'thumb':detail.type }}" class="poster">
+            <!-- Meta Container -->
+            <pt-meta-container show="detail.data"></pt-meta-container>
+        </md-tab-body>
+    </md-tab>
+    
+    <md-tab ng-repeat="(number, season) in detail.seasons | orderBy:predicate:reversed">
+        <md-tab-label>
+          Season {{ number }}
+        </md-tab-label>
+        <md-tab-body class="info-wrapper">
+            <!-- Poster Image -->
+            <img image-loaded ng-if="detail.data.images" ng-src="{{ detail.data.images.poster | traktSize:'thumb':detail.type }}" class="poster">
+            <!-- Episode Container --> 
+            <pt-episode-container ng-show="detail.selectedSeason" episodes="detail.seasons[number]" selected-episode="detail.selected"></pt-episode-container>
+        </md-tab-body>
+    </md-tab>
+</md-tabs>

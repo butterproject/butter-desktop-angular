@@ -1,0 +1,39 @@
+<section flex flex-order="2" layout="column" id="middle-col">
+    <!-- Settings Title Container -->
+    <pt-page-header layout="row" go-back="settings.goBack()"></pt-page-header>
+
+    <kd-content flex layout="column" class="main-container">
+      <div class="settings-container">
+        <form ng-submit="updateSettings()">
+          <!-- Settings Container -->
+          <pt-settings-container template="title"></pt-settings-container>
+          <!-- User Interface Container -->
+          <pt-settings-container template="userui"></pt-settings-container>
+          <!-- Subtitles Container -->
+          <pt-settings-container template="subtitles"></pt-settings-container>
+          <!-- Quality Container -->
+          <pt-settings-container template="quality"></pt-settings-container>
+          <!-- Playback Container -->
+          <pt-settings-container template="playback"></pt-settings-container>
+          <!-- Trakt-Tv Container -->
+          <pt-settings-container template="trakttv"></pt-settings-container>
+          <!-- Tv Show Time Container -->
+          <pt-settings-container template="tvshowtime"></pt-settings-container>
+          <!-- Features Container -->
+          <pt-settings-container template="features"></pt-settings-container>
+          <!-- Remote Control Container -->
+          <pt-settings-container template="remotecontrol"></pt-settings-container>
+          <!-- Connection Container -->
+          <pt-settings-container template="connection"></pt-settings-container>
+          <!-- Cache Container -->
+          <pt-settings-container template="cache"></pt-settings-container>
+          <!-- Database Container -->
+          <pt-settings-container template="database"></pt-settings-container>
+          <!-- Miscellaneous Container -->
+          <pt-settings-container template="miscellaneous"></pt-settings-container>
+          <!-- Buttons Container -->  
+          <pt-settings-container template="buttons"></pt-settings-container>
+        </form>
+      </div>
+    </md-content>
+</section>

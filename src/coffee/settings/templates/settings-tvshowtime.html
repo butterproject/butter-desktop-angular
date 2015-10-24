@@ -1,0 +1,27 @@
+<section class="settings-panel" id="tvshow_time">
+    <div class="settings-panel-header">
+        TV Show Time
+    </div>
+
+    <div class="settings-panel-body" ng-class="{ 'authenticated' : app.TVShowTime.authenticated }">
+
+       <section class="settings-select" ng-if="app.TVShowTime.authenticated">
+          <div class="select-label">You are currently connected to TVShow Time.</div>
+          <a id="disconnect-tvst" class="unauthtext" href="#">Disconnect account</a>
+       </section>
+
+       <section class="settings-select" ng-if="!app.TVShowTime.authenticated">
+          <div class="select-label">You are currently connected to TVShow Time.</div>
+          <a id="disconnect-tvst" class="unauthtext" href="#">Disconnect account</a>
+       </section>
+
+       <section class="settings-select" ng-if="!app.TVShowTime.authenticated">
+          <md-button ng-click="connectTrakt()">
+              <md-icon md-font-set="material-icons">user</md-icon>
+              Connect To TVShow Time
+          </md-button>
+          <div class="tvst-loading-spinner" style="display: none"></div>
+       </section>
+
+    </div>
+</section>

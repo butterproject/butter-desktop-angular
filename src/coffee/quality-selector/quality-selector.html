@@ -1,0 +1,1 @@
+<span ng-repeat="(q, torrent) in quality.torrents" ng-if="q !== '0'" class="q{{ q }}" ng-class="{ 'active': quality.torrents[quality.selected].url === quality.torrents[q].url }" ng-click="quality.select(q)">{{ q }}</span>

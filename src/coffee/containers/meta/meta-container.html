@@ -1,0 +1,20 @@
+<div class="episode-container show-info episode-list-show">
+    <div class="meta-item">
+        <p rating-container ng-if="show.rating" rating="show.rating"></p> 
+        <span class="meta-dot"></span>
+        <p>{{ show.genres.join(', ') }}</p>
+        <span class="meta-dot"></span>
+        <p>{{ show.year }} - {{ show.status ? show.status : "N/A" }}</p>
+        <span class="meta-dot"></span>
+        <p>{{ show.runtime }} min</p>
+    </div>
+    <div class="meta-synop">{{ show.synopsis ? show.synopsis :  'Synopsis not available.' }}</div>
+
+    <md-button ext-open link="show.trakt_url" id="trakt-link" class="meta-btn" role="button" tabindex="0">
+        <md-icon md-font-set="material-icons">launch</md-icon>More Info
+    </md-button>
+
+    <div class="meta-divider"></div>
+
+    <pt-people-container people="show.seasons[show.selectedSeason].actors"></pt-people-container>
+</div>

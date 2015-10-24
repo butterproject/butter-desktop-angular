@@ -1,0 +1,14 @@
+<page-header>
+    <md-button ng-click="stopPlaying()" class="back md-icon-button" role="button">
+        <md-icon md-font-set="material-icons" role="button" tabindex="0" aria-label="arrow-back">close</md-icon>
+    </md-button>
+
+    <div class="title">{{ player.detail.title }}</div>
+    <div class="episode-info">{{ player.episode.title }}</div>
+</page-header>
+
+<div class="meta-container">
+    <div class="status">{{ state }}</div>
+    <md-progress-linear class="md-warn progressbar" md-mode="indeterminate"></md-progress-linear>
+    <div class="stats">Download: {{ torrent.stats.speed.down | fileSize }} &bullet; Upload: {{ torrent.stats.speed.up | fileSize }} &bullet; Active Peers: {{ torrent.stats.peers.total }}</div>
+</div>

@@ -1,0 +1,26 @@
+<section class="settings-panel" id="database" ng-if="settings.config.showAdvancedSettings">
+    <div class="settings-panel-header">
+       Database
+    </div>
+
+    <div class="settings-panel-body">
+        <md-input-container>
+            <label>Database Directory</label>
+            <input type="text" ng-model="settings.config.databaseLocation" readonly="readonly" size="65"/>
+            <i class="open-database-folder fa fa-folder-open-o" title="Open Database Directory"></i>
+        </md-input-container>
+
+        <md-input-container>
+            <input type="file" name="fakedatabaseLocation" id="fakedatabaseLocation" nwdirectory style="display: none;" nwworkingdir="{{ settings.config.databaseLocation }}" />
+        </md-input-container>
+        
+        <div class="btns advanced database">
+             <md-button class="md-primary md-raised" type="button">
+                Import Database
+            </md-button>
+            <md-button class="md-primary md-raised" type="button">
+                Export Database
+            </md-button>
+        </div>
+    </div>
+</section>

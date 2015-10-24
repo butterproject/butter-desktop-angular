@@ -1,0 +1,196 @@
+  /*********************/
+  /* Controlbar plugin */
+  /*********************/
+  wc-bottom-controls 
+    width: 100vw
+    height: 50px
+    display: block
+    position: absolute
+    z-index: 3
+    top: calc(100% - 50px)
+  
+  wc-bottom-controls .controls-container 
+    width: 100vw
+    height: 50px
+    background-color: rgba(0, 0, 0, 0.5)
+    position: absolute
+    display: table
+    zoom: 1
+  
+  wc-play-pause-button 
+    display: table-cell
+    width: 50px
+    vertical-align: middle
+    text-align: center
+    cursor: pointer
+  
+  wc-time-display 
+    color: #FFFFFF
+    display: table-cell
+    font-size: 18px
+    width: 75px
+    vertical-align: middle
+    text-align: center
+    cursor: default
+  
+  .wcTimeDisplay 
+    display: table-cell
+    font-size: 18px
+    width: auto
+  
+  wc-scrub-bar 
+    width: auto
+    display: table-cell
+    cursor: pointer
+    vertical-align: middle
+  
+  wc-scrub-bar [role=slider] 
+    margin-top: 24px
+    margin-bottom: 24px
+    height: 2px
+    background-color: black
+  
+  wc-scrub-bar :focus wc-scrub-bar-current-time 
+    border-right: 6px black groove
+  
+  wc-scrub-bar-current-time 
+    background-color: #FFFFFF
+    width: 100%
+    height: 100%
+    display: block
+    cursor: pointer
+  
+  wc-scrub-bar-cue-points 
+    width: 100vw
+    height: 100vh
+    display: block
+    position: relative
+
+    .cue-point-timeline 
+      color: #FFFFFF
+      padding-top: 3px
+
+      .cue-point 
+        position: absolute
+        height: 3px
+        background-color: #FFFFFF
+            
+  wc-playback-button 
+    display: table-cell
+    width: 50px
+    vertical-align: middle
+    text-align: center
+    cursor: pointer
+  
+  wc-volume 
+    display: table-cell
+    width: 50px
+    vertical-align: middle
+    text-align: center
+    cursor: pointer
+  
+  wc-volume-bar 
+    width: 50px
+    height: 100px
+    top: -100px
+    margin-left: -25px
+    vertical-align: middle
+    text-align: center
+    position: absolute
+    cursor: pointer
+  
+  /* IE10 hack */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
+    wc-volume-bar 
+      zoom: 1
+      opacity: 0.5
+      
+  wc-fullscreen-button 
+    display: table-cell
+    width: 50px
+    vertical-align: middle
+    text-align: center
+    cursor: pointer
+  
+  wc-volume-bar .verticalVolumeBar 
+    width: 50px
+    height: 100px
+    background-color: #000000
+    position: absolute
+  
+  wc-volume-bar .volumeBackground 
+    width: 20px
+    height: 70px
+    left: 15px
+    top: 15px
+    background-color: #222222
+    position: absolute
+  
+  wc-volume-bar .volumeValue 
+    width: 20px
+    height: 100vh
+    background-color: #FFFFFF
+    position: absolute
+  
+  wc-volume-bar .volumeClickArea 
+    width: 20px
+    height: 100vh
+    position: absolute
+  
+  wc-bottom-controls .hide-animation 
+    animation: hideControlsAnimationFrames ease-out 0.5s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards /*when the spec is finished*/
+    -webkit-animation: hideControlsAnimationFrames ease-out 0.5s
+    -webkit-animation-iteration-count: 1
+    -webkit-animation-fill-mode: forwards /*Chrome 16+, Safari 4+*/
+    -moz-animation: hideControlsAnimationFrames ease-out 0.5s
+    -moz-animation-iteration-count: 1
+    -moz-animation-fill-mode: forwards /*FF 5+*/
+    -o-animation: hideControlsAnimationFrames ease-out 0.5s
+    -o-animation-iteration-count: 1
+    -o-animation-fill-mode: forwards /*Not implemented yet*/
+    -ms-animation: hideControlsAnimationFrames ease-out 0.5s
+    -ms-animation-iteration-count: 1
+    -ms-animation-fill-mode: forwards /*IE 10+*/
+  
+  @keyframes hideControlsAnimationFrames {
+    0% {
+      opacity: 0.5
+    }
+    100% {
+      opacity: 0
+    }
+  }    
+
+  wc-bottom-controls .show-animation 
+    animation: showControlsAnimationFrames ease-out 0.5s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards /*when the spec is finished*/
+    -webkit-animation: showControlsAnimationFrames ease-out 0.5s
+    -webkit-animation-iteration-count: 1
+    -webkit-animation-fill-mode: forwards /*Chrome 16+, Safari 4+*/
+    -moz-animation: showControlsAnimationFrames ease-out 0.5s
+    -moz-animation-iteration-count: 1
+    -moz-animation-fill-mode: forwards /*FF 5+*/
+    -o-animation: showControlsAnimationFrames ease-out 0.5s
+    -o-animation-iteration-count: 1
+    -o-animation-fill-mode: forwards /*Not implemented yet*/
+    -ms-animation: showControlsAnimationFrames ease-out 0.5s
+    -ms-animation-iteration-count: 1
+    -ms-animation-fill-mode: forwards /*IE 10+*/
+  
+  @keyframes showControlsAnimationFrames {
+    0% {
+      background-color: rgba(0, 0, 0, 0)
+    }
+    100% {
+      background-color: rgba(0, 0, 0, 0.5)
+    }
+  }
+
+  /* Controlbar icons */
+  wc-mute-button 
+    width: 50px
+    display: block
+  

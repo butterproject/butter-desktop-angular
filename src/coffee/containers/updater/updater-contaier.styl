@@ -1,0 +1,127 @@
+pt-updater-detail-container
+    height 100%
+    width 100%
+    position fixed
+    background-color $BgColor1
+    -webkit-user-select none
+    opacity 1
+
+    .close-icon
+        top: 80px
+    h1
+        padding-top: 110px
+        width: 100vw;
+        text-align: center;
+        font-size 20px
+        color: $Text1
+        font-family $Font
+    h2
+        padding-top: 50px
+        padding-left: 60px;
+        width: 100vw;
+        text-align: left;
+        text-decoration: underline;
+        font-size 17px
+        color: $Text1
+        font-family $Font
+
+    h4
+        padding-top: 30px
+        width: 100vw;
+        text-align: center;
+        font-size 15px
+        color: $Text1
+        font-family $Font   
+    ul
+        margin-top: 10px
+        margin-left: 60px;
+        margin-right: 60px;
+        text-align: left;
+        font-size 15px
+        color: $Text1
+        max-height: 40vh;
+        font-family $Font
+    li
+        margin-left: 30px;
+        top: 10px;
+        height: 18px;
+        font-size: 15px;
+        line-height: 16px;
+        list-style-type: circle;
+        position: relative;
+
+    p
+        padding-top: 10px
+        padding-left: 60px;
+        width: 100vw;
+        text-align: left;
+        font-size 14px
+        color: $Text1
+        font-family $Font
+
+    #update-progress-contain
+        display none
+
+    .update-progressbar
+        position relative
+        margin-bottom 10px
+        margin-top 20px
+        margin-left: 60px;
+        margin-right: 60px;
+        background-color $ButtonBg
+        border-radius 13px
+
+        & > div
+            width 0%
+            background-color $ButtonBgActive
+            height 5px
+            border-radius 13px
+            left 0px
+            transition: background-color 0.5s
+
+
+
+    .btn-container
+        display: table;
+        position: relative;
+        margin-right: auto;
+        right: -20px;
+        margin-left: auto;
+
+    .btn-update
+        position relative
+        margin-top 13px
+        float left
+        padding-left 10px
+        padding-right 10px
+        margin-right 20px
+        border-radius $ButtonRadius
+        height 35px
+        background-color $ButtonBg
+        text-align center
+        color $SettingsButtonText
+        font-family $ButtonFont, $AlternateFont
+        font-size 12px
+        line-height 34px
+        cursor pointer
+        transition background-color .5s
+        &.database
+            margin-top: 0
+        &:hover
+            background-color $ButtonBgHover
+            color $SettingsButtonTextHover
+            text-decoration none
+        &.disabled
+            background-color $ButtonBgDisabled
+            &:hover
+                background-color $ButtonBgDisabled
+            &:active
+                background-color $ButtonBgDisabled
+
+        &.ok
+            background-color $ButtonBgOk
+        &.warning
+            background-color $ButtonBgWarning
+        &:active
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)
+            background: $ButtonBgActive

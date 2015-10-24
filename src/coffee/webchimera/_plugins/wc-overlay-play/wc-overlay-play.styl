@@ -1,0 +1,32 @@
+  /**********************/
+  /* OverlayPlay plugin */
+  /**********************/
+
+  wc-overlay-play
+    width: 100%
+    height: 100%
+    max-width: 100%
+    max-height: 100%
+    position: absolute
+    z-index: 2
+    top: 0
+
+  wc-overlay-play .play:before
+    content: "\e000"
+
+  wc-overlay-play .overlayPlayContainer
+    font-size: 100px
+    width: 100%
+    height: 100%
+    max-width: 100%
+    max-height: 100%
+    position: absolute
+    display: table
+    cursor: pointer
+    zoom: 1
+    opacity: 0.6
+
+  wc-overlay-play .overlayPlayContainer div
+    vertical-align: middle
+    text-align: center
+    display: table-cell

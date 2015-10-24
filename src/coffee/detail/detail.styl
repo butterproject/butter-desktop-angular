@@ -1,0 +1,165 @@
+wc-detail
+    position relative
+    width 100vw
+    display block
+    height 100vh
+
+    md-tabs
+        overflow visible
+
+    md-icon
+        outline none
+
+    md-tab-content
+        overflow: visible
+
+    md-tabs-content-wrapper, .info-wrapper
+        width: 100vw
+        top: 100px
+        height: calc(100vh - 420px)
+        overflow: visible
+
+        .poster
+            position absolute
+            top 0
+            bottom 50px
+            left 110px
+            max-width: 50vh
+            height calc(100vh - 240px - 50px)
+            width calc((100vh - 240px - 50px) * 2 / 3)
+            z-index 3
+            box-shadow 0 0 10px rgba(0, 0, 0, 0.5)
+            border-radius 2px
+            opacity 0
+            background-size cover
+            transition opacity 200ms ease-in
+            
+            &.fadein
+                opacity: 1
+                   
+        .meta-item p
+            color: #ffffff
+            display inline-block
+            text-transform capitalize
+            font-size 15px
+        
+        .meta-synop
+            text-align justify
+            padding-right 5px
+            margin-top 44px
+            position relative
+            color #ffffff
+            width 100%
+            line-height 25px
+            font-size 15px
+            text-rendering optimizeLegibility
+        .meta-btn
+            color #ffffff
+            font-weight 500
+            padding-top 2px
+            margin-top 20px
+            opacity 0.7
+            transition opacity 100ms linear
+            &:hover
+                opacity 1
+            &:active
+                opacity 1
+            &#trakt-link
+                margin-left -6px
+            i
+                margin-right 8px
+        .meta-dot
+            float none
+            display inline-block
+            position relative
+            background-color #ffffff
+            margin-top 0
+            margin-bottom 2px
+            margin-left 16px
+            margin-right 16px
+            width 7px
+            height 7px
+            border-radius 50%
+        .meta-divider
+            width 100%
+            position relative
+            margin-top 36px
+            margin-bottom 41px
+            background-color rgba(255, 255, 255, 0.12)
+            height 1px
+        .people
+            position relative
+            width 50%
+            height 50px
+            margin-bottom 10px
+            display inline-block
+            float left
+            p
+                color #ffffff
+                font-size 15px
+            .person-avatar
+                width 50px
+                height 50px
+                display inline-block
+                margin-right 10px
+                float left
+                border-radius 50%
+                overflow hidden
+                img
+                    width 100%
+                    margin-top: -25%;
+            .person
+                padding 10px 0 3px
+                cursor pointer
+                transition border-color, color 100ms linear
+                &:hover
+                    color rgba(255, 255, 255, 0.7)
+                    text-decoration none
+            .status
+                color rgba(255, 255, 255, 0.65) !important
+                font-size 15px
+
+    .info-wrapper
+        top 50px  
+
+    .season-next
+        position absolute
+        right 40px
+        width 19px
+        color #ffffff
+        margin-top 15.5vh
+    .season-prev
+        position absolute
+        color #ffffff
+        left 65px
+        width 19px
+        margin-top 15.5vh
+    li
+        ul
+            &.dropdown
+                li
+                    i
+                        line-height 32px
+                        margin-left 15px
+                        
+.info-container 
+    position relative
+
+.info-container.movie .info-wrapper .poster
+    height: calc(100vh - 140px - 50px)
+    width: auto
+    max-height: 75vh
+
+.info-container.movie .episode-container
+    left: calc(((100vh - 160px - 50px) * 2 / 3) + 170px)
+
+md-tabs-wrapper
+    display block
+    margin 0 auto
+    height auto
+    width 90%
+
+    .md-tab
+        font-size 20px
+        font-weight 600
+

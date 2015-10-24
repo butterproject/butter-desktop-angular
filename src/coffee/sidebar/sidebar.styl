@@ -1,0 +1,49 @@
+pt-sidebar 
+  max-width 100px
+  min-width 0px
+  z-index 9
+  overflow visible
+  user-select none
+  height 100%
+
+  &:hover 
+      nav
+        width 220px !important
+      
+      .md-button span
+        opacity 1
+  
+  nav
+    padding-top 50px
+    transition width 0.2s ease-out, left 0.5s ease-out
+    min-width 100px !important
+    width 100px !important
+    max-width 220px !important
+    height inherit
+    background-color inherit
+  
+  .md-button 
+    cursor pointer
+    line-height 60px
+    padding 0px 0px 0px 30px
+    max-height 60px
+    text-transform none
+    min-width 0px
+    overflow hidden
+    margin 0
+    text-align left
+    width 100%
+
+    span
+      opacity 0
+      margin-left 10px
+      transition opacity 0.3s ease-in
+
+    span, md-icon 
+      padding 0px 5px 10px
+
+  .md-button .md-ripple-container  
+    border-radius 0px !important
+  
+  button.md-button-moz-focus-inner 
+    padding 0

@@ -1,0 +1,7 @@
+<div>
+  <div class="os-controls {{ title.platform }}">
+      <div ng-repeat="button in title.buttons" ng-click="title[button]()" class="{{ button }}"></div>
+  </div>
+
+  <span>{{ title.name }}</span>
+</div>

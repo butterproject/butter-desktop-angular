@@ -1,0 +1,3 @@
+<md-select placeholder="{{ filter.label }}" ng-model="filter.selected" ng-change="filter.setItem(item)">
+  <md-option class="md-black-primary-default text" ng-repeat="item in filter.items" value="{{item}}">{{ item | titleCase }}</md-option>
+</md-select>

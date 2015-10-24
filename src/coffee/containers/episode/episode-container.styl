@@ -1,0 +1,93 @@
+pt-episode-container, pt-meta-container
+    position absolute
+    top 0
+    display block
+    bottom 0px
+    left calc(((100vh - 240px - 50px) * 2 / 3) + 170px)
+    right 60px
+    padding-right 20px
+    margin-bottom: 40px
+    overflow-y auto
+    overflow-x hidden
+    z-index 1
+    &::-webkit-scrollbar
+        width 2px
+    &::-webkit-scrollbar-track
+        box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
+    &::-webkit-scrollbar-thumb
+        background rgba(255, 255, 255, 0.22)
+    li
+        height 45px
+        list-style none
+        color #ffffff
+        cursor default
+        overflow hidden
+        &.active
+            transition background-color 150ms ease-in-out
+            background-color #3F51B5
+            borderleft-radius 1px
+            border box-shadow 0 2px 5px rgba(0, 0, 0, 0.39)
+            md-icon-button
+                visibility visible
+            p
+                &.episode-id, &.episode-name
+                    font-weight 500
+                &.episode-airdate
+                    visibility visible
+                &.episode-name
+                    max-width calc(100% - 488px)
+            &.watched
+                p
+                    &.episode-id
+                        color rgba(255, 255, 255, 1)
+                    &.episode-name
+                        color rgba(255, 255, 255, 1)
+        &.watched
+            p
+                &.episode-id
+                    color rgba(255, 255, 255, 0.4)
+                &.episode-name
+                    color rgba(255, 255, 255, 0.4)
+            md-icon-button
+                &.watched-icon
+                    opacity 0.9
+        p
+            &.episode-id
+                text-transform uppercase
+                font-size 14px
+                float left
+                letter-spacing 0.3px
+                margin-left 17px
+                font-weight 400
+            &.episode-name
+                font-size 14px
+                max-width calc(100% - 192px)
+                min-width 110px
+                float left
+                white-space nowrap
+                overflow hidden
+                text-overflow ellipsis
+                letter-spacing 0.3px
+                margin-left 25px
+                font-weight 400
+            &.episode-airdate
+                font-size 13.5px
+                float right
+                position relative
+                visibility hidden
+                letter-spacing 0.6px
+                margin-right 33px
+                font-weight 500
+                opacity 0.7
+        md-icon-button
+            font-size 22px
+            visibility hidden
+            margin-top 2px
+            cursor pointer
+            &.info-icon
+                float right
+                margin-right 15px
+            &.watched-icon
+                float right
+                margin-right 5px
+                opacity 0.5

@@ -1,0 +1,44 @@
+<section class="settings-panel" id="remote-control" ng-if="settings.config.showAdvancedSettings">
+    <div class="settings-panel-header">
+        Remote Control
+    </div>
+
+    <div class="settings-panel-body">
+        <md-input-container>
+            <label>Local IP Address</label>
+            <input type="text" id="settingsIpAddr" ng-model="settings.config.ipAddress" readonly="readonly" size="20" />
+        </md-input-container>
+
+        <md-input-container>
+            <label>HTTP API Port</label>
+            <input id="httpApiPort" type="number" size="5" name="httpApiPort" ng-model="settings.config.httpApiPort">
+        </md-input-container>
+        
+        <md-input-container>
+            <label>HTTP API Username</label>
+            <input id="httpApiUsername" type="text" size="50" name="httpApiUsername" ng-model="settings.config.httpApiUsername">
+        </md-input-container>
+        
+        <md-input-container>
+            <label>HTTP API Password</label>
+            <input id="httpApiPassword" type="text" size="50" name="httpApiPassword" ng-model="settings.config.httpApiPassword">
+        </md-input-container>
+        
+        <div class="btns advanced database">
+            <div class="btn-settings database qr-code">
+                <i class="fa fa-qrcode">&nbsp;&nbsp;</i>
+                Generate Pairing QR code
+            </div>
+        </div>
+        
+        <div id="qrcode-overlay"></div>
+        
+        <div id="qrcode-modal">
+            <div class="content-row" class="fa-stack fa-1x" id="qrcode-close">
+                <i class="fa fa-circle-thin fa-stack-2x" style="margin-top: -2px;"></i>
+                <i class="fa fa-times fa-stack-1x" style="margin-top: -2px;"></i>
+            </div>
+            <canvas id="qrcode" width="200" height="200"></canvas>
+        </div>
+    </div>
+</section>

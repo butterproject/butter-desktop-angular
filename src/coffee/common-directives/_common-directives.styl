@@ -1,0 +1,25 @@
+background-cycler >
+  .ng-enter
+    opacity: 0
+    -webkit-transition: opacity 2s ease-in-out
+  .ng-enter-active
+    opacity: 1
+  .ng-leave
+    opacity: 1
+    -webkit-transition: opacity 2s ease-in-out
+  .ng-leave-active
+    opacity: 0
+  .ng-anchor
+    transition: 0.5s linear all
+    
+.bg-image
+  position absolute
+  width 100%
+  top 0
+  height 60vh
+  z-index 1
+  overflow hidden
+  background-size cover
+  background-repeat no-repeat
+  -webkit-filter brightness(55%)
+    

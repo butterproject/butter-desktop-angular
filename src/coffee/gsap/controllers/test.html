@@ -1,0 +1,54 @@
+<div>
+  
+    <div id="stage" gs-scale>
+      <button gs-source="pharrell" ng-click="showDetails(album)"></button>
+      
+      <div gs-target="nowPlaying"></div>
+
+      <!-- This is the exploding 'reveal' view area -->
+      <div gs-target="details" class="hidden">
+        <div class="content">
+          <div gs-target="status"></div>
+          <div gs-target="artist"></div>
+          <div gs-target="circle"></div>
+          
+          <div gs-target="playlist" ng-click="hideDetails()" role='button'>
+            <img ng-src="{{album.playlist}}">
+          </div>
+
+          <div gs-target="album"></div>
+        </div>
+      </div>
+    </div>    
+
+    <!-- The AngularJS/GSAP DSL markup -->
+    <gs-timeline state="zoom" time-scale="1.0" >
+
+        <gs-step target="circle" style="scale: 1.2; opacity: 0"></gs-step>
+        <gs-step target="album" style="left: -400; top: -400;"></gs-step>
+        <gs-step target="details" style="display: none;"></gs-step>
+        <gs-step target="album" style="display: none; opacity: 1"</gs-step>
+        <gs-step target="album" style="bounds: {{ album.from }}"></gs-step>
+        <gs-step target="details" style="display: block;"></gs-step>
+        <gs-step target="album" style="display: block;"></gs-step>
+        <gs-step target="nowPlaying" style="z-index: 100;"></gs-step>
+        
+        <gs-step mark-position="start"></gs-step>
+        
+        <gs-step target="nowPlaying" style="z-index: 100; top: 602" duration="0.2"></gs-step>
+        <gs-step target="circle" style="opacity: 1;" duration="0.01" position="start"></gs-step>
+        <gs-step target="circle" style="scale: 4;" duration="0.3" position="start+=0.01"></gs-step>
+        <gs-step target="circle" style="scale: 5; opacity: 0.85" duration="0.1" position="start+=0.31"></gs-step>
+        <gs-step target="circle" style="delay: 0.2; opacity: 0" duration="0.4" position="start+=0.5"></gs-step>
+        <gs-step target="artist" style="opacity: 1" duration="0.8" position="start"></gs-step>
+        <gs-step target="status" style="opacity: 1" duration="0.8" position="start"></gs-step>
+        <gs-step target="album" style="bounds:{{ album.switchOver }}" duration="0.33" position="start"></gs-step>
+        <gs-step target="playlist" style="bounds:{{ album.switchOver }};" position="start+=0.33"></gs-step>
+        <gs-step target="playlist" style="display: block; className: '';" duration="0.010" position="start+=0.33"></gs-step>
+        <gs-step target="album" style="opacity: 0; display: none" duration="0.010" position="start+=0.33"></gs-step>
+        <gs-step target="playlist" style="className: 'shadow'" position="start+=0.34"></gs-step>
+        <gs-step target="playlist" style="bounds:{{ album.to }}" duration="0.5" position="start+=0.34"></gs-step>
+
+    </gs-timeline>
+  
+</div>

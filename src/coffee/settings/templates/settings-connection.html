@@ -1,0 +1,37 @@
+<section class="settings-panel" id="connection" ng-if="settings.config.showAdvancedSettings">
+    <div class="settings-panel-header">
+        Connection
+    </div>
+
+    <div class="settings-panel-body">
+        <md-input-container>
+            <label>TV Show API Endpoint</label>
+            <input id="tvshowAPI" type="text" size="50" name="tvshowAPI" ng-model="settings.config.tvshowAPI.url">
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Connection Limit</label>
+            <input id="connectionLimit" type="text" size="20" name="connectionLimit" ng-model="settings.config.connectionLimit"/>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>DHT Limit</label>
+            <input type="text" id="dhtLimit" size="20" name="dhtLimit" ng-model="settings.config.dhtLimit"/>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Port to stream on</label>
+            <input id="streamPort" type="text" size="20" name="streamPort" ng-model="settings.config.streamPort"/>&nbsp;&nbsp;<em>0 = Random</em>
+        </md-input-container>
+        
+        <md-input-container>
+            <label>Overall Ratio</label>
+            <input type="text" size="20" name="overallRatio" ng-init="overallRatio = settings.overallRatio()" ng-model="overallRatio">
+            <em>
+              {{ settings.config.totalDownloaded | fileSize }} <i class="fa fa-arrow-circle-down"></i>
+              {{ settings.config.totalUploaded | fileSize }} <i class="fa fa-arrow-circle-up"></i>
+            </em>
+        </md-input-container>
+        
+    </div>
+</section>

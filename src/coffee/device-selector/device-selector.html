@@ -1,0 +1,16 @@
+<div class="button dropup" id="player-chooser" ng-click="devices.toggleMenu($event)">
+  <div id="watch-now" class="left startStreaming">{{ devices.selected }}</div>
+
+  <div class="dropdown-toggle left playerchoice">
+    <img class="imgplayerchoice" ng-src="images/icons/{{ devices.items[devices.selected].type }}-icon.png">
+    <span class="caret"></span>
+  </div>
+
+  <ul class="dropdown-menu playerchoicemenu" role="menu" ng-show="devices.menuOpen">
+    <li ng-repeat="(name, item) in devices.items" ng-click="devices.setItem(name, $event)">
+      <a href="#" ng-class="{ 'active': devices.selected === name }"> {{ name }}
+        <img class="playerchoiceicon" ng-src="images/icons/{{ item.type }}-icon.png">
+      </a>
+    </li>
+  </ul>
+</div>

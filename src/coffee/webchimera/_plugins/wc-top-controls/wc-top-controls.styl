@@ -1,0 +1,36 @@
+  /*********************/
+  /* Controlbar plugin */
+  /*********************/
+  wc-top-controls
+    width: 100%
+    height: 50px
+    display: block
+    position: absolute
+    z-index: 3
+    bottom: 0
+
+  wc-top-controls .controls-container
+    width: 100%
+    height: 50px
+    background-color: rgba(0, 0, 0, 0.5)
+    position: absolute
+    display: table
+
+    zoom: 1
+         
+  wc-close-button 
+    display: table-cell
+    width: 50px
+    height: 50px
+    vertical-align: middle
+    text-align: center
+    cursor: pointer
+    float: left
+  
+  wc-top-controls .hide-animation 
+    animation: hideControlsAnimationFrames ease-out 0.5s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards /*when the spec is finished*/
+    -webkit-animation: hideControlsAnimationFrames ease-out 0.5s
+    -webkit-animation-iteration-count: 1
+    -webkit-animation-fill-mode: forwards /*Chrome 16+, Safari 4+*/

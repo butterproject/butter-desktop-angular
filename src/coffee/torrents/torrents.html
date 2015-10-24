@@ -1,0 +1,23 @@
+<div>
+  <div id="main-list-content">
+    <div class="top-tools">
+      <h1 id="section-title" class="title">Torrents</h1>
+    </div>
+                   
+    <div class="content">
+      <div>
+        <div style="margin: 0 76px 0 66px" class="items">
+          <md-content style="background-color: rgba(79, 83, 84, 0.31)">
+            <md-list>
+              <md-list-item class="md-2-line" ng-repeat="torrent in torrents.data" ng-click="torrents.select(torrent, torrent.files[0])">
+                <pt-torrent-item style="display: inherit; width: 100%" data="torrent"></pt-torrent-item>
+              </md-list-item>
+            </md-list>
+          </md-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

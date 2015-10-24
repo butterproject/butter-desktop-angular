@@ -1,0 +1,97 @@
+// Disable IE Vendor Patches
+support-for-ie = false
+// Only use Webkit vendor prefixes
+vendor-prefixes = webkit official
+
+@import 'nib'
+
+$TitleHeight = 32px
+$FilterBarHeight = 35px
+$HeaderHeight = 65px
+$MovieListPadding = calc(100% - 67px)
+
+*
+    outline 0
+    -moz-user-select none
+    -khtml-user-select none
+    -webkit-user-select none
+    -o-user-select none
+
+&::-webkit-scrollbar
+    width 4px
+&::-webkit-scrollbar-track
+    box-shadow inset 0 0 6px rgba(0, 0, 0, 0.1)
+&::-webkit-scrollbar-thumb
+    background rgba(255, 255, 255, 0.22)
+
+.close-icon
+    top: 45px
+    right: 20px
+    position: fixed
+    color: $CloseButton
+    font-size: 25px
+    line-height: 25px
+    cursor pointer
+    z-index 100
+    transition all .5s
+    font-smoothing: antialiased
+
+    &:hover
+        color $CloseButtonHover
+        transition all .5s
+
+// Gives nicer scrollbars to an element
+scrollable()
+    overflow-x hidden
+    // Overflow: overlay is an undocumented webkit feature. It places the scrollbar *on top* of the content instead of eating some 16px.
+    // It's buggy, though (it paints the scrollbar *over* the content and composites badly, so it will crop the content anyway )
+    overflow-y overlay
+    // Inertial scrolling for touch devices (mostly useless here)
+    -webkit-overflow-scrolling touch
+
+    &::-webkit-scrollbar
+        width 5px
+
+    &::-webkit-scrollbar-track
+        background-color $ScrollBarBg
+        border-radius 2px
+
+    &::-webkit-scrollbar-thumb
+        background-color $ScrollBarThumb
+        border-radius 2px
+
+        &:hover
+            background-color: $ScrollBarThumbHover
+
+    &::-webkit-resizer,
+    &::-webkit-scrollbar-corner,
+    &::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-track-piece
+        display none
+
+.main-container 
+  padding: 25px
+  max-height: calc(100vh - 64px)
+  overflow-x: hidden
+  overflow-y: auto
+
+#main-view.ng-enter, #main-view.ng-leave 
+  position: absolute
+  left: 0
+  right: 0
+  transition opacity .3s ease-in-out
+
+#main-view.ng-enter 
+  opacity: 0
+
+#main-view section  
+  z-index: 0 
+
+#main-view.ng-enter-active 
+  opacity: 1
+
+#main-view.ng-leave 
+  opacity: 1
+
+#main-view.ng-leave-active 
+  opacity: 0

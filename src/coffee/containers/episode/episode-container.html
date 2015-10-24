@@ -1,0 +1,7 @@
+<ul>
+   <li ng-repeat="episode in container.episodes" class="tab-episode" ng-class="{ 'active': container.selectedEpisode.episode == episode.episode }" ng-click="container.selectEpisode(episode)" class="epsiode-tab">    
+        <p class="episode-id">{{ episode.episode }}</p>
+        <p class="episode-name" title="Mind Wars">{{ episode.title }}</p>
+        <p class="episode-airdate">{{ episode.first_aired }}</p>
+    </li>
+</ul>

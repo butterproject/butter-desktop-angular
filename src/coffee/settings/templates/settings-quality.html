@@ -1,0 +1,22 @@
+<section class="settings-panel" id="quality">
+    <div class="settings-panel-header">
+        Quality
+    </div>
+    
+    <div class="settings-panel-body">
+        <section class="settings-select">
+            <md-select class="settings-dropdown" ng-model="settings.config.movies_quality" name="movies_quality">
+                <md-option value="all">All</md-option>
+                <md-option value="1080p">1080p</md-option>
+                <md-option value="720p">720p</md-option>
+            </md-select>
+            <p>Only list movies in</p>
+        </section>
+
+        <md-input-container>
+            <label>Show movie quality on list</label>
+            <md-checkbox ng-model="settings.config.moviesShowQuality"></md-checkbox>
+        </md-input-container>
+        
+    </div>
+</section>

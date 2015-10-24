@@ -1,0 +1,4 @@
+<md-button ng-click="startTorrent()" style="color: rgb(255, 255, 255); background-color: rgb(6, 124, 154);" class="watchnow-btn" role="button" tabindex="0">
+  <md-icon md-font-set="material-icons">play_arrow</md-icon> Play
+  <span ng-if="ctrl.episode.season && ctrl.episode.episode"> S{{ ctrl.episode.season | padNumber }}E{{ ctrl.episode.episode | padNumber }}</span>
+</md-button>

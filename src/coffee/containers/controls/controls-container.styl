@@ -1,0 +1,124 @@
+pt-controls-container
+    position absolute
+    display block
+    height 180px
+    width 100vw
+    right 0
+    bottom 0px
+    background-color #111214
+    .watchnow-btn
+        cursor pointer
+        padding 3px 21px
+        color #fff
+        font-weight 500
+        font-size 15px
+        text-align center
+        text-transform uppercase
+        border-radius 4px
+        float right
+        position absolute
+        top 65px
+        right 80px
+        transition 0.5s
+        background-color #3F51B5
+        &:hover
+            background-color #3a499b
+        &:active
+            background-color #2d41b1
+            transition 0.2s
+        i
+            margin-right 9px
+            float left
+            line-height 25px
+    .meta-container-c
+        top 29px
+        position absolute
+        left calc(((100vh - 240px - 50px) * 2 / 3) + 190px)
+        width 300px
+        li
+            width 100%
+            list-style none
+            margin 0
+            padding 0
+            ul
+                &.dropdown
+                    display none
+                    position absolute
+                    left -15px
+                    padding-top 5px
+                    background-color #1C1D21
+                    width 250px
+                    border-radius 1px
+                    z-index 5
+                    bottom 0px
+                    box-shadow 0 3px 18px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.1)
+                    i
+                        float left
+                    li
+                        list-style none
+                        margin 0
+                        height 32px
+                        margin-bottom 3px
+                        &:hover
+                            background-color #3F51B5
+                        p
+                            padding-right 60px
+                            line-height 31px
+                        i
+                            line-height 32px
+                            margin-left 15px
+                    &.visable
+                        display block
+            &.quality-toggle
+                span
+                    display: inline-block
+                    margin-right: 25px
+                    text-decoration: none
+                    color: #7a7a7a
+                    transition: color 0.4s
+                    padding: 0.7em 0em
+                    opacity 0.5
+                    &.active
+                        opacity 1
+            &.subtitles-dropdown
+                padding-left 1em
+                color: white
+
+                pt-dropdown
+                    z-index 5
+                    width 100%
+                pt-dropdown::shadow #label
+                    pt-selectable-element 
+                        display inline-block
+                    #icon
+                        margin-right 9px;
+                
+                pt-dropdown::shadow #options 
+                    right 0
+                
+                pt-selectable-element.selected 
+                    font-weight bold
+                
+                pt-selectable-element:hover 
+                    background #3F51B5
+                        
+            &.device-dropdown
+                color: white
+                pt-dropdown
+                    z-index: 5
+                pt-selectable-element.selected 
+                    font-weight: bold
+
+                pt-selectable-element:hover 
+                    background: #3F51B5
+        p
+            font-size 14px
+            text-shadow 1px 0px 2px rgba(20, 19, 21, 1)
+            cursor pointer
+            color #ffffff
+            float left
+            position relative
+            margin-left 10px
+            left 10px
+            font-weight 500
+            line-height 25px

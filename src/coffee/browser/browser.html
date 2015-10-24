@@ -1,0 +1,50 @@
+
+<md-content style="overflow: hidden; padding-top: 25vh;">
+  <pt-page-header title="type" pt-parallax="fade" parallax-ratio="0.66" ></pt-page-header>
+
+  <div>
+
+    <div class="top-tools">
+      <pt-filter-bar type="type" pt-parallax="sticky" on-change="browser.onChange({params: params})">
+      </pt-filter-bar>
+    </div>
+
+    <div layout="row" layout-sm="column" layout-align="space-around" ng-if="!browser.data && !browser.backdrop" >
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <background-cycler class="bg-fade"></background-cycler>
+
+    <md-content layout-padding  ng-show="browser.data">
+      <md-grid-list md-row-height="4:3" md-cols-sm="2" md-cols-gt-sm="3" md-cols-md="4" md-cols-gt-md="5" md-cols-lg="6" md-cols-gt-lg="8" md-gutter-sm="8px" md-gutter-md="12px" md-gutter-lg="16px" md-gutter-gt-lg="16px">
+
+        <md-grid-tile pt-lazy-item="showItem = true" md-rowspan="2" ng-repeat="item in browser.data track by item._id" ng-click="browser.selectDetail(item)">
+          <div ng-if="showItem" style="display: inline-block; height: 100%; width: 100%">
+            <img image-loaded vibrant colors="colors" name="item.title" ng-src="{{ item.images.poster | traktSize:'thumb':item.type }}" width="100%"/>
+            <div class="info" ng-style="colors">
+              <md-button class="md-fab" ng-style="{ 'background-color': colors.fab }">
+                <md-icon md-font-set="material-icons">play_arrow</md-icon>
+              </md-button>
+
+              <h3 class="item-title">{{ item.title }}</h3>
+              
+              <div class="meta">
+                {{ item.year }}
+                <div class="dot"></div>
+                <div class="rating" rating-container ng-if="item.rating" rating="item.rating"></div> 
+              </div>
+            </div>
+          </div>
+        </md-grid-tile>
+
+        <md-grid-tile pt-lazy-item="browser.loadMoreItems()" md-rowspan="2" class="item">
+          <div layout="column" layout-sm="column" layout-align="space-around" ng-if="browser.loading">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+        </md-grid-tile>
+
+      </md-grid-list>
+    </md-content>
+  </div>
+  
+</md-content>

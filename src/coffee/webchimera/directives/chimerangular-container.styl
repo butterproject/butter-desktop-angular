@@ -1,0 +1,90 @@
+border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+wc-scrub-bar-cue-points.console .cue-point 
+  background-color: aqua !important
+
+wc-scrub-bar-cue-points.animations .cue-point 
+  background-color: lightgreen !important
+
+wc-scrub-bar-cue-points.chapters .cue-point 
+  background-color: gold !important
+
+div.menu 
+  padding: 10px
+  font-size: 16px
+  background-color: #507eb3
+  color: white
+
+  ul 
+    list-style-type: none
+
+    li 
+      display: inline-block
+      padding-right: 20px
+      
+  a 
+    color: white
+
+    &.selected 
+      text-decoration: underline
+      
+$large-width = 1170px
+$large-height = $large-width * 9 / 16
+
+$normal-width = 940px
+$normal-height = $normal-width * 9 / 16
+
+$tablet-width = 728px
+$tablet-height = $tablet-width * 9 / 16
+
+.chimerangular-container 
+  width: 100vw
+  height: 100vh
+
+  .skipButton 
+    position: absolute
+    padding: 10px
+    top: 10px
+    right: 10px
+    z-index: 99999
+    color: white
+    cursor: pointer
+    background-color: #666666
+    border: 2px #FFFFFF solid
+    display: none
+    border-radius(10px)
+  
+  &.audio 
+    width: 100vw
+    height: 50px
+    margin: auto
+  
+  input 
+    width: 100vw
+  
+  .barChart 
+    background-color: #507eb3
+    height: 20px
+    width: 0
+  
+  .text 
+    color: #507eb3
+    opacity: 0
+  
+.animable 
+  -webkit-transition: 0.5s linear all
+  transition: 0.5s ease-out all
+
+
+// ANIMATIONS
+.show-hide-animation.ng-hide-add,
+.show-hide-animation.ng-hide-remove 
+  display: block !important
+  opacity: 1
+
+.show-hide-animation.ng-hide 
+  opacity: 0

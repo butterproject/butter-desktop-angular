@@ -1,0 +1,29 @@
+pt-panel
+  display flex
+  overflow hidden
+  height 100vh
+  position relative
+  width 100%
+  backface-visibility hidden
+  will-change overflow
+
+pt-sidebar,
+pt-content
+  overflow auto
+  height auto
+  -webkit-overflow-scrolling touch
+  -ms-overflow-style none
+
+pt-sidebar::-webkit-scrollbar
+  display none
+
+pt-content
+  flex 1
+
+.splash-container 
+  height: 50%;
+  left: 25%;
+  top: 25%;
+  z-index: 9999;
+  width: 50%;
+  position: absolute;
