@@ -1,6 +1,7 @@
 shell = require 'shell'
 window = require 'browser-window'
-ipc      = require 'ipc'
+ipc = require 'ipc'
+app = require 'app'
 
 { EventEmitter } = require 'events'
 
@@ -18,7 +19,7 @@ class AppWindow extends EventEmitter
       icon: 'assets/images/icon.png'
       transparent: true
       center: true
-      'web-preferences': 
+      'web-preferences':
         'webaudio': true,
         'web-security': false,
         'use-content-size': true,
@@ -47,13 +48,13 @@ class AppWindow extends EventEmitter
     ipc.on 'ready', (event, data) =>
       ready = true
 
-      { size, coords, zoom } = data 
+      { size, coords, zoom } = data
 
       @window.setSize size[0], size[1]
 
       @window.show()
 
-      return     
+      return
 
     ipc.on 'get-port', (evt, arg) =>
       evt.returnValue = @port
@@ -82,13 +83,13 @@ class AppWindow extends EventEmitter
     ipc.on 'resize', (e, size) ->
       if @window.isMaximized()
         return
-      
+
       width = @window.getSize()[0]
       height = width / size.ratio | 0
-      
+
       @window.setSize width, height
 
-      return 
+      return
 
     ipc.on 'enter-full-screen', =>
       @window.setFullScreen true
