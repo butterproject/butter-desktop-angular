@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
 <!--
 On October 30, 2003, Brett Roper dedicated to the public domain the
 works "SVG graphic of Chad Flag.", "SVG graphic of El Salvador Flag.",
@@ -23,18 +21,10 @@ modified, built upon, or otherwise exploited by anyone for any
 purpose, commercial or non-commercial, and in any way, including by
 methods that have not yet been invented or conceived.
 -->
-<svg id="canada" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" fill-opacity="14.118" height="480" width="640" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" fill="#28ff09">
- <metadata id="metadata3572">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" fill-rule="evenodd" fill-opacity="1" transform="matrix(1.25 0 0 .93750 0 .0000011260)">
-  <rect id="rect576" height="512" width="171.16" y="2.8695e-7" x="170.3" fill="#fff"/>
-  <rect id="rect575" height="512" width="170.3" y=".000045701" x="0" fill="#f00"/>
-  <rect id="rect577" height="512" width="171.87" y=".000030219" x="340.13" fill="#f00"/>
- </g>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" fill-opacity="14.118" height="480" width="640" xmlns:cc="http://creativecommons.org/ns#" fill="#28ff09" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<g fill-opacity="1" transform="matrix(1.25 0 0 .93750 0 .0000011260)" fill-rule="evenodd">
+<rect height="512" width="171.16" y="2.8695e-7" x="170.3" fill="#fff"/>
+<rect height="512" width="170.3" y=".000045701" x="0" fill="#f00"/>
+<rect height="512" width="171.87" y=".000030219" x="340.13" fill="#f00"/>
+</g>
 </svg>
