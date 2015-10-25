@@ -1,4 +1,5 @@
-# [Butter](https://github.com/butterproject/butter)
+# Butter
+[![Build Status](https://travis-ci.org/butterproject/butter-desktop-angular.svg?branch=master)](https://travis-ci.org/butterproject/butter-desktop-angular)
 
 Allow any computer user to watch movies easily streaming from torrents, without any particular knowledge.
 
@@ -14,33 +15,21 @@ Want to report a bug, request a feature, contribute or translate Butter? Check o
 
 If you're comfortable getting up and running from a `git clone`, this method is for you.
 
-If you clone the GitLab repository, you will need to build a number of assets using grunt.
+If you clone the GitHub repository, you will need to build a number of assets using grunt.
 
-The [master](https://github.com/butterproject/butter) branch which contains the latest release.
+The [master](https://github.com/butterproject/butter-desktop-angular) branch which contains the latest release.
 
 #### Quickstart:
 
-1. `npm install -g grunt-cli bower`
+1. `npm install -g grunt-cli bower` (Linux: you **need** to run with `sudo`)
 1. `npm install`
 1. `grunt build`
-1. `grunt start`
-
-If you encounter trouble with the above method, you can try:
-
-1. `npm install -g bower grunt-cli` (Linux: you may need to run with `sudo`)
-1. `cd desktop`
-1. `npm install`
-1. `bower install`
-1. `grunt lang`
-1. `grunt nodewebkit`
-1. `grunt css`
 1. `grunt start`
 
 Optionally, you may simply run `./make_butter.sh` if you are on a linux or mac based operating system.
 
 Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md)
 
-<a name="community"></a>
 ## Community
 
 Keep track of Butter development and community activity.
@@ -49,7 +38,6 @@ Keep track of Butter development and community activity.
 * Read and subscribe to [The Official Butter Blog](https://github.com/butterproject/blog).
 * Join in discussions on the [Butter Forum](https://discuss.butterproject.org)
 * Connect with us on IRC at `#butterproject` on freenode ([web access](http://webchat.freenode.net/?channels=butterproject))
-
 
 ## Versioning
 
@@ -66,8 +54,9 @@ Constructed with the following guidelines:
 * A new *patch* release indicates a bugfix or small change which does not affect compatibility.
 * A new *build* release indicates this is a pre-release of the version.
 
-
 ***
+
+## License
 
 If you distribute a copy or make a fork of the project, you have to credit this project as the source.
 

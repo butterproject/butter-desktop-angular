@@ -133,12 +133,10 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'restart-electron', ->
     electron.restart()
-
     return
 
   grunt.registerTask 'reload-electron', ->
     electron.reload()
-
     return
 
   grunt.registerTask 'copyDeps', ->
@@ -146,10 +144,9 @@ module.exports = (grunt) ->
     grunt.task.run 'copy:main'
     grunt.task.run 'copy:server'
 
-  # define the tasks
+  # define the main tasks
   grunt.registerTask 'build', (env) ->
     env = env or 'dev'
-
     grunt.config.set 'config.env', env
 
     grunt.task.run 'clean:build'
@@ -164,13 +161,10 @@ module.exports = (grunt) ->
     electron.start()
     grunt.task.run 'watch'
 
-
   grunt.registerTask 'dev', (env) ->
     process.env.NODE_ENV = 'dev'
-
     grunt.task.run 'build'
     grunt.task.run 'start'
-
     return
 
   grunt.event.on 'watch', (action, filepath, target) ->
