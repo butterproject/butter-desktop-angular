@@ -2,6 +2,7 @@ shell = require 'shell'
 window = require 'browser-window'
 ipc = require 'ipc'
 app = require 'app'
+path = require 'path'
 
 { EventEmitter } = require 'events'
 
@@ -10,13 +11,13 @@ class AppWindow extends EventEmitter
     super()
 
     defaults =
-      title: 'Angular Butter'
+      title: 'Butter'
       'min-width': 520
       'min-height': 520
       frame: false
       resizable: true
       show: false
-      icon: 'assets/images/icon.png'
+      icon: path.join(__dirname, '..', 'images/butter-logo.png')
       transparent: true
       center: true
       'web-preferences':
@@ -59,7 +60,6 @@ class AppWindow extends EventEmitter
     ipc.on 'get-port', (evt, arg) =>
       evt.returnValue = @port
 
-
     ipc.on 'close', =>
       app.quit()
       return
@@ -78,6 +78,10 @@ class AppWindow extends EventEmitter
 
     ipc.on 'maximize', =>
       @window.maximize()
+      return
+
+    ipc.on 'unmaximize', =>
+      @window.unmaximize()
       return
 
     ipc.on 'resize', (e, size) ->
