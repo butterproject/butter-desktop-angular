@@ -1,7 +1,15 @@
-<div>
-  <div class="os-controls {{ title.platform }}">
-      <div ng-repeat="button in title.buttons" ng-click="title[button]()" class="{{ button }}"></div>
+<div layout="row" layout-align="center center">
+
+  <div offset="40" flex="20">
+    <span>{{ title.name }}</span>
   </div>
 
-  <span>{{ title.name }}</span>
+  <div offset="30" flex="10">
+    <div layout="row" class="os-controls" layout-align="center center">
+        <md-icon ng-repeat="button in title.buttons"
+                 ng-click="title[button]()" aria-label="{{ button }}"
+                 md-svg-icon='topbar:{{ button }}-color'></md-icon>
+    </div>
+  </div>
+
 </div>

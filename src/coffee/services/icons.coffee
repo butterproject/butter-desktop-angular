@@ -18,6 +18,10 @@ angular.module 'app.services'
   $mdIconProvider.icon 'device:vlc', 'images/icons/devices/external-vlc-icon.svg'
   $mdIconProvider.icon 'device:local', 'images/icons/devices/local-icon.svg'
 
+  $mdIconProvider.icon 'topbar:close-color', 'images/icons/topbar/close-color.svg'
+  $mdIconProvider.icon 'topbar:max-color', 'images/icons/topbar/max-color.svg'
+  $mdIconProvider.icon 'topbar:min-color', 'images/icons/topbar/min-color.svg'
+
 .run ($http, $templateCache) ->
   # Cache icons
   # Pre-fetch icons sources by URL and cache in the $templateCache...
@@ -36,6 +40,10 @@ angular.module 'app.services'
     'images/icons/devices/external-smplayer-icon.svg'
     'images/icons/devices/external-vlc-icon.svg'
     'images/icons/devices/local-icon.svg'
+
+    'images/icons/topbar/close-color.svg'
+    'images/icons/topbar/max-color.svg'
+    'images/icons/topbar/min-color.svg'
   ]
   angular.forEach urls, (url) ->
     $http.get url, cache: $templateCache
