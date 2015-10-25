@@ -30,28 +30,28 @@ angular.module 'app.common-directives'
 
     vm.select = (pane) ->
       if vm.currentPane
-        element = vm.currentPane.element         
+        element = vm.currentPane.element
         element.css 'display', 'none'
 
-        vm.currentPane.selected = false 
+        vm.currentPane.selected = false
         vm.lastPane = vm.currentPane
 
       pane.selected = true
       vm.currentPane = pane
 
-      element = pane.element 
+      element = pane.element
       element.css 'display', 'block'
 
       return
 
     timeout = null
 
-    vm.addPane = (pane) -> 
+    vm.addPane = (pane) ->
       if pane.selected is 'true'
         vm.currentPane = pane
 
-      if timeout 
-        $timeout.cancel 
+      if timeout
+        $timeout.cancel
 
       timeout = $timeout ->
         $scope.loaded = true
@@ -61,23 +61,23 @@ angular.module 'app.common-directives'
 
       if not vm.templates[pane.title]
         paneElement = angular.element '<pt-content pt-lazy-container="' + pane.title + '" pt-lazy-scroll style="overflow: auto; display: none;"></pt-content>'
-        paneElement.append $templateCache.get pane.src      
+        paneElement.append $templateCache.get pane.src
 
         vm.templates[pane.src] = $compile paneElement
 
       templateScope = $rootScope.$new()
-      templateScope.type = pane.title 
+      templateScope.type = pane.title
 
       templateCtrl = $controller(pane.ctrl + 'Controller as ' + pane.ctrl, $scope: templateScope)
 
-      vm.templates[pane.src] templateScope, (clone) -> 
+      vm.templates[pane.src] templateScope, (clone) ->
         clone.data '$ngControllerController', templateCtrl
 
         vm.panes[pane.title].element = clone
 
         $element.append clone
 
-        if pane.selected is 'true' 
+        if pane.selected is 'true'
           clone.css 'display', 'block'
         else clone.css 'display', 'none'
 
