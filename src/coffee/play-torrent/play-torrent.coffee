@@ -12,13 +12,14 @@ angular.module 'app.play-torrent', []
     ctrl = scope.ctrl
 
     scope.startTorrent = ->
+      console.log "Starting torrent ..."
       scope.player = ctrl
 
       torrentProvider.addTorrentLink(ctrl.torrentLink).then (resp) ->
         torrentProvider.getTorrent(resp.data.infoHash).then (torrentDetail) ->
           scope.torrent = torrentDetail
           scope.torrent.listen()
-      
+
       return
 
 .controller 'playTorrentController', (Settings, torrentProvider) ->
