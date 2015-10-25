@@ -5,10 +5,16 @@ md-content
         width 100%
         height 120px
         z-index 3
-                      
+
+    pt-page-header
+        position relative
+        top -100px
+        left 0px
+        height auto
+
     md-grid-list
         z-index 2
-            
+
         md-grid-tile
             list-style: none
             overflow hidden
@@ -20,10 +26,10 @@ md-content
                 opacity 0
                 background-size cover
                 transition opacity 200ms ease-in
-                
+
                 &.fadein
                     opacity: 1
-                    
+
             .info
                 position absolute
                 bottom 0
@@ -36,13 +42,13 @@ md-content
                 transition .5s transform cubic-bezier(0.55, 0, 0.1, 1), .1s background ease-in
                 transform translateY(100%)
                 text-align left
-                
+
                 h3
                     font-size 18px
                     line-height 22px
                     font-weight 500
                     margin-bottom 16px
-                    
+
                     &::before
                         content ''
                         float right
@@ -79,8 +85,8 @@ md-content
                     transform scale(0,0)
 
             &:hover
-                .md-button.md-fab                    
+                .md-button.md-fab
                     transform scale(1,1)
-                    background-image linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))         
+                    background-image linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1))
                 .info
                     transform translateY(0)

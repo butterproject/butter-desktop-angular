@@ -1,4 +1,10 @@
-pt-sidebar 
+pt-content
+  transition margin-left 0.2s ease-out
+
+pt-page-header .title
+  transition margin-left 0.2s ease-out
+
+pt-sidebar
   max-width 100px
   min-width 0px
   z-index 9
@@ -6,13 +12,19 @@ pt-sidebar
   user-select none
   height 100%
 
-  &:hover 
+  &:hover
       nav
         width 220px !important
-      
+
       .md-button span
         opacity 1
-  
+
+  &:hover ~ pt-content
+    margin-left 120px
+
+  &:hover ~ (pt-page-header .title) // Does not work ! It should right ? :-(
+    margin-left 120px
+
   nav
     padding-top 50px
     transition width 0.2s ease-out, left 0.5s ease-out
@@ -21,8 +33,8 @@ pt-sidebar
     max-width 220px !important
     height inherit
     background-color inherit
-  
-  .md-button 
+
+  .md-button
     cursor pointer
     line-height 60px
     padding 0px 0px 0px 30px
@@ -39,11 +51,11 @@ pt-sidebar
       margin-left 10px
       transition opacity 0.3s ease-in
 
-    span, md-icon 
+    span, md-icon
       padding 0px 5px 10px
 
-  .md-button .md-ripple-container  
+  .md-button .md-ripple-container
     border-radius 0px !important
-  
-  button.md-button-moz-focus-inner 
+
+  button.md-button-moz-focus-inner
     padding 0
