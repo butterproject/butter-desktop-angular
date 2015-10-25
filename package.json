@@ -1,12 +1,12 @@
 {
-  "name": "Butter-Desktop-Angular",
+  "name": "Butter-Desktop",
   "homepage": "https://butterproject.github.io/",
   "bugs": "https://github.com/butterproject/butter-desktop-angular/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/butterproject/butter-desktop-angular.git"
   },
-  "version": "0.0.0",
+  "version": "0.4.0",
   "description": "There's nothing on TV",
   "main": "build/scripts/main.js",
   "devDependencies": {
@@ -62,12 +62,5 @@
     "torrent-health": "0.0.6",
     "torrent-stream": "1.0.0",
     "wcjs-prebuilt": "^2.0.6"
-  },
-  "scripts": {
-    "start": "electron build/server.js",
-    "dev": "electron build/server.js",
-    "mac-bundle": "electron-packager . Butter-Desktop-Angular --platform=darwin --arch=x64 --version=0.33.0 --ignore=node_modules/electron-prebuilt && cp info.plist Butter-Desktop-Angular.app/Contents/info.plist && cp icon.icns Butter-Desktop-Angular.app/Contents/Resources/atom.icns",
-    "win-bundle": "electron-packager . Butter-Desktop-Angular --platform=win32 --arch=ia32 --version=0.33.0 --icon=icon.ico",
-    "linux-64-bundle": "electron-packager . Butter-Desktop-Angular --platform=linux --arch=x64 --version=0.33.0 ignore='node_modules/(electron-packager|electron-prebuilt)'"
   }
 }
