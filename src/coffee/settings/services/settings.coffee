@@ -57,8 +57,8 @@ angular.module 'app.settings'
 
   # More options
   httpApiPort: 8008
-  httpApiUsername: 'popcorn'
-  httpApiPassword: 'popcorn'
+  httpApiUsername: 'butter'
+  httpApiPassword: 'butter'
 
   # Trakt.tv
   traktToken: ''
