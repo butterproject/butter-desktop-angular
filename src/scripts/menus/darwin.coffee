@@ -54,8 +54,8 @@ module.exports = [
   {
     label: 'Help'
     submenu: [
-      { label: 'Report Issue', command: 'application:open-url', url: 'https://git.popcorntime.io/popcorntime/desktop/issues' }
-      { label: 'Suggest Feature', command: 'application:open-url', url: 'https://git.popcorntime.io/popcorntime/desktop/issues' }
+      { label: 'Report Issue', command: 'application:open-url', url: 'https://github.com/butterproject/butter-desktop-angular/issues' }
+      { label: 'Suggest Feature', command: 'application:open-url', url: 'https://github.com/butterproject/butter-desktop-angular/issues' }
     ]
   }
 ]

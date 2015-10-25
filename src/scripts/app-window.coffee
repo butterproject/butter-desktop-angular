@@ -1,6 +1,8 @@
 shell = require 'shell'
 window = require 'browser-window'
-ipc      = require 'ipc'
+ipc = require 'ipc'
+app = require 'app'
+path = require 'path'
 
 { EventEmitter } = require 'events'
 
@@ -9,16 +11,16 @@ class AppWindow extends EventEmitter
     super()
 
     defaults =
-      title: 'Angular Butter'
+      title: 'Butter'
       'min-width': 520
       'min-height': 520
       frame: false
       resizable: true
       show: false
-      icon: 'assets/images/icon.png'
+      icon: path.join(__dirname, '..', 'images/butter-logo.png')
       transparent: true
       center: true
-      'web-preferences': 
+      'web-preferences':
         'webaudio': true,
         'web-security': false,
         'use-content-size': true,
@@ -47,17 +49,16 @@ class AppWindow extends EventEmitter
     ipc.on 'ready', (event, data) =>
       ready = true
 
-      { size, coords, zoom } = data 
+      { size, coords, zoom } = data
 
       @window.setSize size[0], size[1]
 
       @window.show()
 
-      return     
+      return
 
     ipc.on 'get-port', (evt, arg) =>
       evt.returnValue = @port
-
 
     ipc.on 'close', =>
       app.quit()
@@ -79,16 +80,20 @@ class AppWindow extends EventEmitter
       @window.maximize()
       return
 
+    ipc.on 'unmaximize', =>
+      @window.unmaximize()
+      return
+
     ipc.on 'resize', (e, size) ->
       if @window.isMaximized()
         return
-      
+
       width = @window.getSize()[0]
       height = width / size.ratio | 0
-      
+
       @window.setSize width, height
 
-      return 
+      return
 
     ipc.on 'enter-full-screen', =>
       @window.setFullScreen true

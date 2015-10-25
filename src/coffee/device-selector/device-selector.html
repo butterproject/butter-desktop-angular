@@ -1,16 +1,21 @@
-<div class="button dropup" id="player-chooser" ng-click="devices.toggleMenu($event)">
-  <div id="watch-now" class="left startStreaming">{{ devices.selected }}</div>
+<md-menu>
 
-  <div class="dropdown-toggle left playerchoice">
-    <img class="imgplayerchoice" ng-src="images/icons/{{ devices.items[devices.selected].type }}-icon.png">
-    <span class="caret"></span>
-  </div>
+ <md-button ng-click="devices.openMenu($mdOpenMenu, $event)"
+            class="md-icon-button" aria-label="Device Selector Menu"
+            style="width: 100%">
+  <md-icon md-svg-src='device:{{ devices.items[devices.selected].type }}'
+            md-menu-origin></md-icon>
+  {{ devices.items[devices.selected].name }}
+ </md-button>
 
-  <ul class="dropdown-menu playerchoicemenu" role="menu" ng-show="devices.menuOpen">
-    <li ng-repeat="(name, item) in devices.items" ng-click="devices.setItem(name, $event)">
-      <a href="#" ng-class="{ 'active': devices.selected === name }"> {{ name }}
-        <img class="playerchoiceicon" ng-src="images/icons/{{ item.type }}-icon.png">
-      </a>
-    </li>
-  </ul>
-</div>
+ <md-menu-content class="device-selector">
+   <md-menu-item ng-repeat="(id, item) in devices.items">
+     <md-button ng-click="devices.setItem(id)" aria-label="{{ item.name }}">
+       <md-icon md-svg-src='device:{{ devices.items[devices.selected].type }}'
+                md-menu-align-target></md-icon>
+       {{ item.name }}
+     </md-button>
+   </md-menu-item>
+ </md-menu-content>
+
+</md-menu>

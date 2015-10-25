@@ -1,8 +1,8 @@
-<section flex flex-order="2" layout="column" id="middle-col">
+<md-content id="settings" flex flex-order="2" layout="column" id="middle-col">
     <!-- Settings Title Container -->
-    <pt-page-header layout="row" go-back="settings.goBack()"></pt-page-header>
+    <pt-page-header layout="row" title="'Settings'" go-back="settings.goBack()"></pt-page-header>
 
-    <kd-content flex layout="column" class="main-container">
+    <section flex layout="column" class="main-container">
       <div class="settings-container">
         <form ng-submit="updateSettings()">
           <!-- Settings Container -->
@@ -31,9 +31,10 @@
           <pt-settings-container template="database"></pt-settings-container>
           <!-- Miscellaneous Container -->
           <pt-settings-container template="miscellaneous"></pt-settings-container>
-          <!-- Buttons Container -->  
+          <!-- Buttons Container -->
           <pt-settings-container template="buttons"></pt-settings-container>
         </form>
       </div>
-    </md-content>
-</section>
+    </section>
+
+</md-content>

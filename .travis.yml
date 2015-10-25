@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "0.12"
+before_install: npm install -g grunt-cli grunt bower
+after_success:
+  - grunt build
+notifications:
+  email: false
+  irc: "chat.freenode.net#butterdev"

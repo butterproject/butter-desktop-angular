@@ -20,20 +20,20 @@ module.exports = (grunt) ->
       platform: platform
       env: 'dev'
       pkg: grunt.file.readJSON 'package.json'
-      
+
       path:
         build: normalize "#{__dirname}/build"
         dist: 'dist'
         cache: 'cache'
         icons: 'src/icons'
-        
+
     clean:
       build: src: [ '<%= config.path.build %>' ]
       dist: src: [ '<%= config.path.dist %>' ]
 
     coffee:
-      app: 
-        options: 
+      app:
+        options:
           bare: true
           join: true
         files: 'build/js/app.js': ['src/coffee/*.coffee', 'src/coffee/**/**.coffee']
@@ -51,28 +51,32 @@ module.exports = (grunt) ->
         dest: 'build/scripts/'
         ext: '.js'
 
-    watch: 
-      options: 
+    watch:
+      options:
         nospawn : true
-      client: 
-        files: ['src/coffee/*.coffee', 'src/coffee/**/*.coffee'], tasks: ['coffee', 'ngtemplates', 'ngAnnotate', 'restart-electron']
-      stylus: 
-        files: ['src/**/*.styl'], tasks: ['stylus', 'restart-electron']
-      server: 
-        files: ['src/server/*.coffee', 'src/server/**/*.coffee'], tasks: ['coffee', 'restart-electron']
+      client:
+        files: ['src/coffee/*.coffee', 'src/coffee/**/*.coffee',
+                'src/coffee/*.html', 'src/coffee/**/*.html'],
+        tasks: ['coffee', 'ngtemplates', 'ngAnnotate', 'restart-electron']
+      stylus:
+        files: ['src/**/*.styl'],
+        tasks: ['stylus', 'restart-electron']
+      server:
+        files: ['src/server/*.coffee', 'src/server/**/*.coffee'],
+        tasks: ['coffee', 'restart-electron']
 
     # https://www.npmjs.com/package/grunt-angular-templates
     ngtemplates:
-      ng: 
+      ng:
         cwd: 'src/coffee'
         src: ['**/*.html']
         dest: 'build/js/templates.js'
 
     # https://www.npmjs.com/package/grunt-ng-annotate
     ngAnnotate:
-      build: 
+      build:
         files: 'build/js/app.js': ['build/js/app.js']
-  
+
     concat:
       js:
         src: [
@@ -80,7 +84,7 @@ module.exports = (grunt) ->
           'src/vendor/js/**'
         ]
         dest: 'build/js/vendor.js'
-      
+
       css:
         src: [
           'src/vendor/css/**/*.css'
@@ -95,28 +99,28 @@ module.exports = (grunt) ->
           use: [ 'nib' ]
           compress: false
           paths: [ '/styl' ]
-        
+
         expand: true
         join: true
         files: 'build/css/app.css': ['src/**/*.styl', 'src/**/**.styl']
 
-    copy: 
+    copy:
       build:
         src: ['package.json']
         dest: '<%= config.path.build %>/'
         expand: true
 
-      main: 
+      main:
         files: [
           { expand: true, cwd: 'src/assets/', src: ['**'], dest: 'build' }
         ]
 
-      node_modules: 
+      node_modules:
         files: [
           { expand: true, cwd: 'node_modules/', src: ['**'], dest: 'build/node_modules' }
         ]
 
-      server: 
+      server:
         src: ['src/server/package.json']
         dest: '<%= config.path.build %>/server/package.json'
 
@@ -129,12 +133,10 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'restart-electron', ->
     electron.restart()
-   
     return
 
   grunt.registerTask 'reload-electron', ->
     electron.reload()
-
     return
 
   grunt.registerTask 'copyDeps', ->
@@ -142,10 +144,9 @@ module.exports = (grunt) ->
     grunt.task.run 'copy:main'
     grunt.task.run 'copy:server'
 
-  # define the tasks
+  # define the main tasks
   grunt.registerTask 'build', (env) ->
     env = env or 'dev'
-
     grunt.config.set 'config.env', env
 
     grunt.task.run 'clean:build'
@@ -160,13 +161,10 @@ module.exports = (grunt) ->
     electron.start()
     grunt.task.run 'watch'
 
-
   grunt.registerTask 'dev', (env) ->
     process.env.NODE_ENV = 'dev'
-    
     grunt.task.run 'build'
     grunt.task.run 'start'
-
     return
 
   grunt.event.on 'watch', (action, filepath, target) ->

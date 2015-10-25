@@ -19,7 +19,7 @@ angular.module 'app', [
   'app.device-selector'
   'app.filter-bar'
   'app.header'
-  'app.gsTimelines' 
+  'app.gsTimelines'
   'app.page-header'
   'app.plugins'
   'app.play-torrent'
@@ -31,7 +31,7 @@ angular.module 'app', [
   'app.streamer'
   'app.torrents'
   'app.webchimera'
-  
+
 ]
 
 .config ($compileProvider, $httpProvider, $mdThemingProvider) ->
