@@ -27,7 +27,7 @@ angular.module 'app.settings'
   alwaysFullscreen: false
   playNextEpisodeAuto: true
   chosenPlayer: 'local'
-  avaliableDevices: 
+  avaliableDevices:
     'local':
       type: 'local'
       name: brand.name
@@ -41,25 +41,25 @@ angular.module 'app.settings'
   #trigger on click in details
   startScreen: 'Movies'
   lastTab: ''
-  
+
   # Quality
   shows_default_quality: '720p'
   movies_default_quality: '1080p'
   moviesShowQuality: false
   movies_quality: 'all'
-  
+
   # Subtitles
   subtitle_language: 'none'
   subtitle_size: '28px'
   subtitle_color: '#ffffff'
   subtitle_decoration: 'Outline'
   subtitle_font: 'Arial'
-  
+
   # More options
   httpApiPort: 8008
   httpApiUsername: 'popcorn'
   httpApiPassword: 'popcorn'
-  
+
   # Trakt.tv
   traktToken: ''
   traktTokenRefresh: ''
@@ -69,15 +69,15 @@ angular.module 'app.settings'
   traktLastActivities: ''
   traktSyncOnStart: true
   traktPlayback: true
-  
+
   # TVShow Time
   tvstAccessToken: ''
-  
+
   # Advanced options
   connectionLimit: 100
   dhtLimit: 500
   streamPort: 0
-  
+
   # 0 = Random
   tmpLocation: path.join(os.tmpDir(), 'Butter')
   databaseLocation: path.join(data_path, 'data')
@@ -86,7 +86,7 @@ angular.module 'app.settings'
   events: true
   minimizeToTray: false
   bigPicture: false
-  
+
   # Features
   activateTorrentCollection: true
   activateWatchlist: true
@@ -149,14 +149,14 @@ angular.module 'app.settings'
         fingerprint: /301/
       }
     ]
-  
+
   # App Settings
   dbversion: '0.1.0'
   font: 'tahoma'
-  
+
   defaultWidth: Math.round(window.screen.availWidth * 0.8)
   defaultHeight: Math.round(window.screen.availHeight * 0.8)
-  
+
   # Miscellaneous
   playerSubPosition: '0px'
   playerVolume: '1'
