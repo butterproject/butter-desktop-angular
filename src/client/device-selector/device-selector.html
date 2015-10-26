@@ -1,4 +1,4 @@
-<md-menu>
+<md-menu class="device-selector">
 
  <md-button ng-click="devices.openMenu($mdOpenMenu, $event)"
             class="md-icon-button" aria-label="Device Selector Menu"
@@ -8,10 +8,10 @@
   {{ devices.items[devices.selected].name }}
  </md-button>
 
- <md-menu-content class="device-selector">
+ <md-menu-content>
    <md-menu-item ng-repeat="(id, item) in devices.items">
      <md-button ng-click="devices.setItem(id)" aria-label="{{ item.name }}">
-       <md-icon md-svg-src='device:{{ devices.items[devices.selected].type }}'
+       <md-icon md-svg-src='device:{{ item.type }}'
                 md-menu-align-target></md-icon>
        {{ item.name }}
      </md-button>

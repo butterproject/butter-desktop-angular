@@ -13,7 +13,8 @@ angular.module 'app.device-selector', []
 
   vm.items = Settings.avaliableDevices
   vm.selected = if Settings.chosenPlayer? then Settings.chosenPlayer else "local"
-
+  console.log vm.items
+  console.log vm.selected
   vm.openMenu = ($mdOpenMenu, event) ->
     originatorEv = event
     $mdOpenMenu event

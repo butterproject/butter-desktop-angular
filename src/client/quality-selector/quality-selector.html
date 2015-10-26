@@ -1,4 +1,4 @@
-<md-menu>
+<md-menu class="quality-selector">
 
  <md-button ng-click="quality.openMenu($mdOpenMenu, $event)"
             class="md-icon-button" aria-label="Device Selector Menu"
@@ -6,7 +6,7 @@
   {{ quality.selected }}
  </md-button>
 
- <md-menu-content class="quality-selector">
+ <md-menu-content>
    <md-menu-item ng-repeat="(q, torrent) in quality.fakelist" >
      <md-button ng-click="quality.setItem(q)" aria-label="{{ q }}">
        {{ q }}
