@@ -26,8 +26,6 @@ The [master](https://github.com/butterproject/butter-desktop-angular) branch whi
 1. `grunt build`
 1. `grunt start`
 
-Optionally, you may simply run `./make_butter.sh` if you are on a linux or mac based operating system.
-
 Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md)
 
 ## Community
