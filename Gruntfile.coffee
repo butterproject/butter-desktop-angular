@@ -129,7 +129,7 @@ module.exports = (grunt) ->
         out: 'dist'
         version: '0.34.1'
         overwrite: true
-        ignore: ["wcjs-prebuilt"]
+        ignore: []
         app_version: "0.4.dev"
       linux64:
         options:
