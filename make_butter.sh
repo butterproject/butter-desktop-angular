@@ -3,7 +3,7 @@
 ## Version 0.2
 ##
 ## Usage
-## ./make_butter.sh [url]
+## ./make_butter.sh
 ##
 ## The script make_butter.sh allows you to setup, and build a version of Butter
 
