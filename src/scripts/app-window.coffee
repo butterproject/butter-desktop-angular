@@ -18,7 +18,7 @@ class AppWindow extends EventEmitter
       resizable: true
       show: false
       icon: path.join(__dirname, '..', 'images/butter-logo.png')
-      transparent: true
+      transparent: false
       center: true
       'web-preferences':
         'webaudio': true,
