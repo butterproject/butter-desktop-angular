@@ -30,7 +30,7 @@ module.exports = (grunt) ->
         options:
           bare: true
           join: true
-        files: 'build/js/app.js': ['src/coffee/*.coffee', 'src/coffee/**/**.coffee']
+        files: 'build/js/app.js': ['src/client/*.coffee', 'src/client/**/**.coffee']
       server:
         expand: true
         flatten: true
@@ -49,8 +49,8 @@ module.exports = (grunt) ->
       options:
         nospawn : true
       client:
-        files: ['src/coffee/*.coffee', 'src/coffee/**/*.coffee',
-                'src/coffee/*.html', 'src/coffee/**/*.html'],
+        files: ['src/client/*.client', 'src/client/**/*.coffee',
+                'src/client/*.html', 'src/client/**/*.html'],
         tasks: ['coffee', 'ngtemplates', 'ngAnnotate', 'restart-electron']
       stylus:
         files: ['src/**/*.styl'],
@@ -62,7 +62,7 @@ module.exports = (grunt) ->
     # https://www.npmjs.com/package/grunt-angular-templates
     ngtemplates:
       ng:
-        cwd: 'src/coffee'
+        cwd: 'src/client'
         src: ['**/*.html']
         dest: 'build/js/templates.js'
 
