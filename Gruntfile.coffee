@@ -1,4 +1,4 @@
-os        = require 'os'
+os = require 'os'
 livereload = require 'electron-livereload'
 
 electron = livereload.server()
@@ -21,15 +21,9 @@ module.exports = (grunt) ->
       env: 'dev'
       pkg: grunt.file.readJSON 'package.json'
 
-      path:
-        build: normalize "#{__dirname}/build"
-        dist: 'dist'
-        cache: 'cache'
-        icons: 'src/icons'
-
     clean:
-      build: src: [ '<%= config.path.build %>' ]
-      dist: src: [ '<%= config.path.dist %>' ]
+      build: src: [ 'build' ]
+      dist: src: [ 'dist' ]
 
     coffee:
       app:
@@ -104,28 +98,61 @@ module.exports = (grunt) ->
         join: true
         files: 'build/css/app.css': ['src/**/*.styl', 'src/**/**.styl']
 
-    copy:
-      build:
-        src: ['package.json']
-        dest: '<%= config.path.build %>/'
-        expand: true
+    'string-replace':
+      main_script:
+        files:
+          'build/package.json': 'package.json'
+        options:
+          replacements:
+            [ {
+              pattern: 'build/scripts/main.js'
+              replacement: 'scripts/main.js'
+            } ]
 
+    copy:
       main:
         files: [
           { expand: true, cwd: 'src/assets/', src: ['**'], dest: 'build' }
         ]
-
+      server:
+        src: ['src/server/package.json']
+        dest: 'build/server/package.json'
       node_modules:
         files: [
           { expand: true, cwd: 'node_modules/', src: ['**'], dest: 'build/node_modules' }
         ]
 
-      server:
-        src: ['src/server/package.json']
-        dest: '<%= config.path.build %>/server/package.json'
+    electron:
+      options:
+        name: 'Butter'
+        dir: 'build'
+        out: 'dist'
+        version: '0.34.1'
+        overwrite: true
+        ignore: ["wcjs-prebuilt"]
+        app_version: "0.4.dev"
+      linux64:
+        options:
+          platform: 'linux'
+          arch: 'x64'
+      linux32:
+        options:
+          platform: 'linux'
+          arch: 'ia32'
+      darwin:
+        options:
+          platform: 'darwin'
+          arch: 'x64'
+          # icon: ""
+      win32:
+        options:
+          platform: 'win32'
+          arch: 'x64'
+          # icon: ""
 
   # load the tasks
   require('load-grunt-tasks') grunt
+  grunt.loadNpmTasks 'grunt-string-replace'
 
   grunt.registerTask 'default', ->
     grunt.task.run 'build'
@@ -140,9 +167,9 @@ module.exports = (grunt) ->
     return
 
   grunt.registerTask 'copyDeps', ->
-    grunt.task.run 'copy:build'
     grunt.task.run 'copy:main'
     grunt.task.run 'copy:server'
+    grunt.task.run 'copy:node_modules'
 
   # define the main tasks
   grunt.registerTask 'build', (env) ->
@@ -150,6 +177,7 @@ module.exports = (grunt) ->
     grunt.config.set 'config.env', env
 
     grunt.task.run 'clean:build'
+    grunt.task.run 'string-replace:main_script'
     grunt.task.run 'coffee'
     grunt.task.run 'ngtemplates:ng'
     grunt.task.run 'ngAnnotate:build'
@@ -171,6 +199,9 @@ module.exports = (grunt) ->
     grunt.log.writeln target + ': ' + filepath + ' has ' + action
     return
 
-  grunt.task.registerTask 'dist', (env) ->
-    grunt.task.run 'build:' + env
-    grunt.task.run 'copy:node_modules'
+  grunt.registerTask 'package', ->
+    grunt.task.run 'electron:linux64'
+    grunt.task.run 'electron:linux32'
+    grunt.task.run 'electron:darwin'
+    grunt.task.run 'electron:win32'
+

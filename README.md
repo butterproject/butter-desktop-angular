@@ -39,6 +39,10 @@ You can also have a look at the [Dockerfile](Dockerfile) as a build example.
 
 Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md)
 
+### Generate executable packages
+
+You can generate executable packages for all platforms with `grunt package`. The packages are in `dist/`.
+
 ## Community
 
 Keep track of Butter development and community activity.
