@@ -20,8 +20,11 @@
 
          <section class="settings-select">
             <div class="select-label">Start Screen</div>
-            <md-select class="settings-dropdown" aria-label="start-screen" ng-model="settings.config.screen">
-               <md-option ng-repeat="screen in settings.config.start_screens" name="start_screen">{{ screen }}</md-option>
+            <md-select class="settings-dropdown" aria-label="start-screen" ng-model="settings.config.start_screens">
+               <md-option ng-repeat="screen in settings.start_screens" name="start_screen"
+                          ng-selected="{{ screen == settings.config.startScreen ? 'true' : 'false' }}">
+                   {{ screen }}
+               </md-option>
             </md-select>
         </section>
 
@@ -46,8 +49,11 @@
         <md-input-container ng-if="settings.config.showAdvancedSettings">
             <section class="settings-select">
                 <div class="select-label">Watched Items</div>
-                <md-select class="settings-dropdown" aria-label="watched-items" ng-model="settings.config.watch_type">
-                <md-option ng-repeat="type in settings.watch_types" name="watchedCovers">{{ type }}</md-option>
+                <md-select class="settings-dropdown" ng-model="settings.config.watchedCovers">
+                    <md-option ng-repeat="(key, value) in settings.watch_types" name="watch_types"
+                               ng-selected="{{ key == settings.config.watchedCovers ? 'true' : 'false' }}">
+                        {{ value }}
+                    </md-option>
                 </md-select>
             </section>
         </md-input-container>

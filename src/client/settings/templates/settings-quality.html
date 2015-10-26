@@ -8,14 +8,14 @@
             <div class="select-label">Only list movies in</div>
             <md-select class="settings-dropdown" ng-model="settings.config.movies_quality"
                        name="movies_quality" aria-label="Show by quality">
-                <md-option value="all">All</md-option>
-                <md-option value="1080p">1080p</md-option>
-                <md-option value="720p">720p</md-option>
+               <md-option ng-repeat="(key, value) in settings.movies_quality" name="movie_quality"
+                          ng-selected="{{ key == settings.config.movies_quality ? 'true' : 'false' }}">
+                   {{ value }}
+               </md-option>
             </md-select>
         </section>
 
         <md-input-container>
-            <label></label>
             <md-checkbox aria-label="show-quality" ng-model="settings.config.moviesShowQuality">
                 Show movie quality on list
             </md-checkbox>

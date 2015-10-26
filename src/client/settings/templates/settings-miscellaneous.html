@@ -7,7 +7,10 @@
         <section class="settings-select">
             <div class="select-label">When Opening TV Series Detail Jump To</div>
             <md-select class="settings-dropdown" ng-model="settings.config.jump_to">
-                <md-option ng-repeat="jump_to in settings.tv_detail_jump_to" name="jump_to">{{ jump_to }}</md-option>
+                <md-option ng-repeat="(key, value) in settings.tv_detail_jump_to" name="jump_to"
+                           ng-selected="{{ key == settings.config.tv_detail_jump_to ? 'true' : 'false' }}">
+                    {{ value }}
+                </md-option>
             </md-select>
         </section>
 
