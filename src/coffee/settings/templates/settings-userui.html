@@ -44,10 +44,12 @@
         </md-input-container>
 
         <md-input-container ng-if="settings.config.showAdvancedSettings">
-            <label>Watched Items</label>
-            <md-select class="settings-dropdown" aria-label="watched-items" ng-model="settings.config.watch_type">
-               <md-option ng-repeat="type in settings.watch_types" name="watchedCovers">{{ type }}</md-option>
-            </md-select>
+            <section class="settings-select">
+                <div class="select-label">Watched Items</div>
+                <md-select class="settings-dropdown" aria-label="watched-items" ng-model="settings.config.watch_type">
+                <md-option ng-repeat="type in settings.watch_types" name="watchedCovers">{{ type }}</md-option>
+                </md-select>
+            </section>
         </md-input-container>
 
     </div>
