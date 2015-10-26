@@ -19,14 +19,23 @@ If you clone the GitHub repository, you will need to build a number of assets us
 
 The [master](https://github.com/butterproject/butter-desktop-angular) branch which contains the latest release.
 
-#### Quickstart:
+### Quickstart:
+
+Note that in Ubuntu (or derivative system) you probably need to upgrade `nodejs` and `npm` version. To do so, run the following :
+
+1. `curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -`
+1. `sudo apt-get --yes install nodejs && sudo npm -g install npm`
+
+Then you can start building Butter :
 
 1. `npm install -g grunt-cli bower` (Linux: you **need** to run with `sudo`)
-1. `npm install`
-1. `grunt build`
-1. `grunt start`
+1. `npm install ## Install local dependencies in node_modules/`
+1. `grunt build ## Build the Butter application`
+1. `grunt start ## Start the Butter application`
 
 Optionally, you may simply run `./make_butter.sh` if you are on a linux or mac based operating system.
+
+You can also have a look at the [Dockerfile](Dockerfile) as a build example.
 
 Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md)
 
