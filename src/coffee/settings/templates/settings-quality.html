@@ -5,18 +5,20 @@
 
     <div class="settings-panel-body">
         <section class="settings-select">
+            <div class="select-label">Only list movies in</div>
             <md-select class="settings-dropdown" ng-model="settings.config.movies_quality"
                        name="movies_quality" aria-label="Show by quality">
                 <md-option value="all">All</md-option>
                 <md-option value="1080p">1080p</md-option>
                 <md-option value="720p">720p</md-option>
             </md-select>
-            <p>Only list movies in</p>
         </section>
 
         <md-input-container>
-            <label>Show movie quality on list</label>
-            <md-checkbox aria-label="show-quality" ng-model="settings.config.moviesShowQuality"></md-checkbox>
+            <label></label>
+            <md-checkbox aria-label="show-quality" ng-model="settings.config.moviesShowQuality">
+                Show movie quality on list
+            </md-checkbox>
         </md-input-container>
 
     </div>

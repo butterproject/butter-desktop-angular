@@ -5,14 +5,15 @@
 
     <div class="settings-panel-body">
         <md-input-container ng-if="settings.config.showAdvancedSettings">
-            <label>Always start playing in fullscreen</label>
-            <md-checkbox aria-label="start-fullscreen" ng-model="settings.config.alwaysFullscreen"></md-checkbox>
+            <md-checkbox aria-label="start-fullscreen" ng-model="settings.config.alwaysFullscreen">
+                Always start playing in fullscreen
+            </md-checkbox>
         </md-input-container>
 
         <md-input-container>
-            <label>Play next episode automatically</label>
-            <md-checkbox aria-label="play-next-episode"
-                         ng-model="settings.config.playNextEpisodeAuto"></md-checkbox>
+            <md-checkbox aria-label="play-next-episode" ng-model="settings.config.playNextEpisodeAuto">
+                Play next episode automatically
+            </md-checkbox>
         </md-input-container>
 
     </div>

@@ -6,38 +6,39 @@
     <div class="settings-panel-body">
 
         <section class="settings-select">
+            <div class="select-label">Default Subtitle</div>
             <md-select class="settings-dropdown" aria-label="default-subtitle"
                        ng-model="settings.config.sub_lang">
                <md-option ng-repeat="lang in settings.config.sub_langs" name="subtitle_language">{{ lang }}</md-option>
             </md-select>
-            <p>Default Subtitle</p>
         </section>
 
         <section class="settings-select" ng-if="settings.config.showAdvancedSettings">
+            <div class="select-label">Font</div>
             <md-select class="settings-dropdown" aria-label="font-subtitle" ng-model="settings.config.sub_font">
                <md-option ng-repeat="font in settings.sub_fonts" name="sub_fonts">{{ font }}</md-option>
             </md-select>
-            <p>Font</p>
         </section>
 
         <section class="settings-select" ng-if="settings.config.showAdvancedSettings">
+            <div class="select-label">Decoration</div>
             <md-select class="settings-dropdown" aria-label="decoration-subtitle"
                        ng-model="settings.config.sub_deco">
                 <md-option ng-repeat="deco in settings.sub_deco" name="sub_deco">{{ deco }}</md-option>
             </md-select>
-            <p>Decoration</p>
         </section>
 
         <section class="settings-select">
+            <div class="select-label">Size</div>
             <md-select class="settings-dropdown" aria-label="size-subtitle"
                        ng-model="settings.config.sub_size">
                 <md-option ng-repeat="size in settings.sub_sizes" name="sub_size">{{ size }}</md-option>
             </md-select>
-            <p>Size</p>
         </section>
 
         <section class="settings-select" ng-if="settings.config.showAdvancedSettings">
             <div class="subtitles-custom">
+                <div class="select-label">Color</div>
                 <input class="colorsub" aria-label="color-subtitle" id="subtitles_color"
                        type="color" size="7" name="subtitle_color"
                        ng-model="settings.config.subtitle_color" list="subs_colors">
@@ -50,7 +51,6 @@
                     <option>#00ff00</option>
                 </datalist>
             </div>
-            <p>Color</p>
         </section>
     </div>
 </section>
