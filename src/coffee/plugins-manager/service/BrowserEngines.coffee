@@ -6,18 +6,18 @@ angular.module 'app.plugins'
   engines = {}
 
   registerGenericEngine: (name, factory) ->
-    @registerEngine name, new GenericEngine factory 
+    @registerEngine name, new GenericEngine factory
 
   registerEngine: (name, implementation) ->
     if name of engines
-      $log.info 'Updating torrent search engine', name 
+      $log.info 'Updating torrent search engine', name
     else
       $log.info 'Registering torrent search engine:', name
-    
+
     engines[name] = implementation
 
     return
-  
+
   getSearchEngines: ->
     engines
 
@@ -29,7 +29,7 @@ angular.module 'app.plugins'
       delete engines[name]
 
   findEpisode: (serie, episode) ->
-    $log.info serie, episode 
+    $log.info serie, episode
 
   search: (query, TVDB_ID, options) ->
-    $log.info query, TVDB_ID, options 
+    $log.info query, TVDB_ID, options

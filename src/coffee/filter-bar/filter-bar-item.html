@@ -1,3 +1,5 @@
-<md-select md-container-class="filter-bar" placeholder="{{ filter.label }}" ng-model="filter.selected" ng-change="filter.setItem(item)">
+<md-select md-container-class="filter-bar" placeholder="{{ filter.label }}"
+           ng-model="filter.selected" ng-change="filter.setItem(item)"
+           aria-label="{{ filter.label }}">
   <md-option ng-repeat="item in filter.items" value="{{item}}">{{ item | titleCase }}</md-option>
 </md-select>

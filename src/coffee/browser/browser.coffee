@@ -40,7 +40,6 @@ angular.module 'app.browser', []
     cycle()
 
   getBackdrop = (results) ->
-    console.log results
     vm.bgImages = results
     vm.bgImagesKeys = Object.keys results
     vm.cycleBgImages()

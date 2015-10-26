@@ -29,9 +29,7 @@ angular.module 'app.providers'
     for idx, movie of data.downloads
       torrents = formatTorrents movie
 
-      console.log (movie)
-
-      if torrents and not movieIds[movie.ImdbCode]?  
+      if torrents and not movieIds[movie.ImdbCode]?
         movieIds[movie.ImdbCode] = idx
 
         movies.push
@@ -39,10 +37,10 @@ angular.module 'app.providers'
           title: movie.MovieTitleClean
           year: movie.MovieYear
           genres: movie.Genre.split(',')
-          rating: 
+          rating:
             percentage: movie.Rating / 10
           runtime: movie.Runtime
-          images: 
+          images:
             poster: movie.CoverImage
             banner: movie.CoverImage
             fanart: movie.CoverImage
@@ -62,7 +60,7 @@ angular.module 'app.providers'
   fetch: (filters = {}) ->
     defer = $q.defer()
 
-    params = 
+    params =
       sort_by: 'seeds'
       limit: 50
       with_rt_ratings: true

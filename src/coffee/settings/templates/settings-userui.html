@@ -6,22 +6,21 @@
     <div class="settings-panel-body">
         <section class="settings-select">
             <div class="select-label">Default Language</div>
-            <md-select class="settings-dropdown" aria-aria-label="language" ng-model="settings.config.lang">
+            <md-select class="settings-dropdown" aria-label="language" ng-model="settings.config.lang">
                 <md-option ng-repeat="lang in settings.config.langs" name="language">{{ lang }}</md-option>
             </md-select>
         </section>
 
-
          <section class="settings-select">
             <div class="select-label">Theme</div>
-            <md-select class="settings-dropdown" ng-model="settings.config.theme">
+            <md-select class="settings-dropdown" aria-label="theme" ng-model="settings.config.theme">
                <md-option ng-repeat="theme in settings.config.themes" name="theme">{{ theme }}</md-option>
             </md-select>
         </section>
 
          <section class="settings-select">
             <div class="select-label">Start Screen</div>
-            <md-select class="settings-dropdown" ng-model="settings.config.screen">
+            <md-select class="settings-dropdown" aria-label="start-screen" ng-model="settings.config.screen">
                <md-option ng-repeat="screen in settings.config.start_screens" name="start_screen">{{ screen }}</md-option>
             </md-select>
         </section>
@@ -31,7 +30,7 @@
                 Translate Synopsis
             </md-checkbox>
         </md-input-container>
-        
+
         <md-input-container ng-if="settings.config.showAdvancedSettings">
             <md-checkbox aria-label="Show rating over covers" ng-model="settings.config.coversShowRating">
                 Show rating over
@@ -46,7 +45,7 @@
 
         <md-input-container ng-if="settings.config.showAdvancedSettings">
             <label>Watched Items</label>
-            <md-select class="settings-dropdown" ng-model="settings.config.watch_type">
+            <md-select class="settings-dropdown" aria-label="watched-items" ng-model="settings.config.watch_type">
                <md-option ng-repeat="type in settings.watch_types" name="watchedCovers">{{ type }}</md-option>
             </md-select>
         </md-input-container>
