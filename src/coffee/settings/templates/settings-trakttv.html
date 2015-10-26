@@ -8,7 +8,7 @@
                 <section class="settings-select" ng-if="app.Trakt.authenticated">
                     You are currently connected to Trakt.tv.
                     <a id="unauthTrakt" class="unauthtext" href="#">Disconnect account</a>
-                </section>>
+                </section>
 
                 <md-input-container>
                     <md-checkbox aria-label="Automatically Sync on Start" ng-model="settings.config.traktSyncOnStart">
@@ -27,11 +27,11 @@
                         <md-icon md-font-set="material-icons">refresh</md-icon>
                         Sync With Trakt
                     </md-button>
-                </section>>
+                </section>
 
                 <section class="settings-select" ng-if="!app.Trakt.authenticated">
                     Connect to Trakt.tv to automatically 'scrobble' episodes you watch
-                </section>>
+                </section>
 
                 <section class="settings-select">
                     <md-button ng-click="connectTrakt()">
@@ -39,7 +39,7 @@
                         Connect To Trakt
                     </md-button>
                     <div class="loading-spinner" style="display: none"></div>
-                </section>>
+                </section>
         </div>
     </div>
-</section>>
+</section>
