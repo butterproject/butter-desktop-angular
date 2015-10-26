@@ -13,7 +13,7 @@ angular.module 'app.detail', []
   vm = this
 
   vm.currentDevice = Settings.chosenPlayer
-  vm.currentQuality = '0' 
+  vm.currentQuality = '0'
   vm.currentTorrent = null
 
   vm.seasons = {}
@@ -30,7 +30,7 @@ angular.module 'app.detail', []
 
 #      if vm.config.subtype
 #        api = Haruhichan
-#      else 
+#      else
 #        api = #switch vm.config.type
 #          when 'show'
 #            TVApi
@@ -44,7 +44,7 @@ angular.module 'app.detail', []
     vm.data = null
 
   vm.selectSeason = (season) ->
-    seasonIndex = '' + vm.selectedSeason 
+    seasonIndex = '' + vm.selectedSeason
 
     if vm.seasons[seasonIndex]
       for first of vm.seasons[seasonIndex]
@@ -56,10 +56,10 @@ angular.module 'app.detail', []
 
   getTorrentDetails = (newTorrent, type) ->
     api.detail(newTorrent, type).then (resp) ->
-      console.error 'resp', resp, api
+
       vm.data = resp.data
-      vm.config.poster = $filter('traktSize')(resp.data.images.fanart, 'medium', vm.type) 
-      
+      vm.config.poster = $filter('traktSize')(resp.data.images.fanart, 'medium', vm.type)
+
       if vm.type is 'show'
         angular.forEach resp.data.episodes, (value, currentEpisode) ->
           vm.seasons[value.season] ?= {}
@@ -78,4 +78,4 @@ angular.module 'app.detail', []
     $scope.$watch 'detail.selectedSeason', (newSeason) ->
       vm.selectSeason newSeason
 
-  return 
+  return

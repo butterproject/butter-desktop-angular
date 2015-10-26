@@ -118,5 +118,4 @@ angular.module 'app.providers'
     movies.map (item) -> item['_id']
 
   detail: (torrent_id) ->
-        console.error torrent_id, movies
-        $q.when data: movies[movieIds[torrent_id]]
+    $q.when data: movies[movieIds[torrent_id]]
