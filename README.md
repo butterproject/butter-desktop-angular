@@ -7,7 +7,7 @@ Visit the project's website at <https://butterproject.org>.
 
 ***
 
-__WARNING__ : This project is in very early stage development and almost nothing work yet ! It will someday replace the current `butter-desktop` app based on others techs. This project is using __Electron__ + __Angular__ + __Coffee__. If you want to help and have any skills in one of these techs, please submit a PR and give Butter some love :-)
+__WARNING__ : This project is in very early stage development and almost nothing works yet ! It will someday replace the current `butter-desktop` app based on others techs. This project is using __Electron__ + __Angular__ + __Coffee__. If you want to help and have any skills in one of these techs, please submit a PR and give Butter some love :-)
 
 ***
 
