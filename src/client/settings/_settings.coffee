@@ -30,7 +30,7 @@ angular.module 'app.settings', []
   vm.start_screens = ["Movies", "TV Series", "Anime"]
 
   vm.movies_quality =
-    all: "All"
+    'all': "All"
     '1080p': "1080p"
     '720p': "720p"
 
