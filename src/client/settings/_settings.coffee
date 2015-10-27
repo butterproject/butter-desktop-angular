@@ -11,10 +11,10 @@ angular.module 'app.settings', []
   vm = this
 
   vm.goBack = ->
-    
+
   vm.config = Settings
 
-  vm.tv_detail_jump_to = 
+  vm.tv_detail_jump_to =
     firstUnwatched: 'First Unwatched Episode'
     next: 'Next Episode In Series'
 
@@ -26,10 +26,17 @@ angular.module 'app.settings', []
   vm.load = ->
     $http.get('/containers/settings/settings').success (data) ->
       vm.settings = data
- 
+
+  vm.start_screens = ["Movies", "TV Series", "Anime"]
+
+  vm.movies_quality =
+    'all': "All"
+    '1080p': "1080p"
+    '720p': "720p"
+
   vm.sub_sizes = ["20px","22px","24px","26px","28px","30px","32px","34px","36px","38px","48px","50px","52px","54px","56px","58px","60px"]
 
-  vm.watch_type = 
+  vm.watch_types =
     none: 'Show'
     fade: 'Fade'
     hide: 'Hide'
@@ -57,7 +64,7 @@ angular.module 'app.settings', []
     { name: 'Verdana', id: 'verdana' }
   ]
 
-  vm.font_folders = 
+  vm.font_folders =
     win32:  '/Windows/fonts'
     darwin: '/Library/Fonts'
     linux:  '/usr/share/fonts'
@@ -80,7 +87,7 @@ angular.module 'app.settings', []
     recursive vm.font_folder
   catch e
 
-  vm.avail_fonts = [ 'Arial' ]
+  vm.sub_fonts = [ 'Arial' ]
 
   for i of vm.arr_fonts
     for key of files
@@ -88,7 +95,7 @@ angular.module 'app.settings', []
       toFind = vm.arr_fonts[i].id
 
       if found.indexOf(toFind) != -1
-        vm.avail_fonts.push vm.arr_fonts[i].name
+        vm.sub_fonts.push vm.arr_fonts[i].name
         break
 
   return
