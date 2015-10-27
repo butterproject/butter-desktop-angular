@@ -124,13 +124,14 @@ module.exports = (grunt) ->
 
     electron:
       options:
-        name: 'Butter'
+        name: '<%= config.pkg.name %>'
         dir: 'build'
         out: 'dist'
-        version: '0.34.1'
+        version: '<%= config.pkg.electronVersion %>'
+        'app-version': '<%=config.pkg.version %>'
         overwrite: true
+        prune: true
         ignore: []
-        app_version: "0.4.dev"
       linux64:
         options:
           platform: 'linux'

@@ -7,6 +7,7 @@
     "url": "https://github.com/butterproject/butter-desktop-angular.git"
   },
   "version": "0.4.0",
+  "electronVersion": "0.34.1",
   "description": "There's nothing on TV",
   "main": "build/scripts/main.js",
   "devDependencies": {
