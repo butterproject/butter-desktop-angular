@@ -11,6 +11,8 @@ __WARNING__ : This project is in very early stage development and almost nothing
 
 ***
 
+![Screenshot of Butter app](screenshot.png)
+
 ## Getting Involved
 
 Want to report a bug, request a feature, contribute or translate Butter? Check out our in-depth guide to [Contributing to Butter](CONTRIBUTING.md). We need all the help we can get! You can also join in with our [community](README.md#community) to keep up-to-date and meet other Butterrs.
