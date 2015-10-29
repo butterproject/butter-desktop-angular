@@ -1,5 +1,5 @@
 # Butter
-[![Build Status](https://travis-ci.org/butterproject/butter-desktop-angular.svg?branch=master)](https://travis-ci.org/butterproject/butter-desktop-angular)
+[![Build Status](https://travis-ci.org/butterproject/butter-desktop-angular.svg?branch=master)](https://travis-ci.org/butterproject/butter-desktop-angular) [![Dependency Status](https://david-dm.org/butterproject/butter-desktop-angular.svg)](https://david-dm.org/butterproject/butter-desktop-angular) [![devDependency Status](https://david-dm.org/butterproject/butter-desktop-angular/dev-status.svg)](https://david-dm.org/butterproject/butter-desktop-angular#info=devDependencies)
 
 Allow any computer user to watch movies easily streaming from torrents, without any particular knowledge.
 
