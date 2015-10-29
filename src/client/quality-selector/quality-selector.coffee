@@ -3,19 +3,18 @@
 angular.module 'app.quality-selector', []
 
 .directive 'ptQualitySelector', ->
-  restrict: 'A'
   scope: { torrents: '=', selected: '=' }
-  bindToController: true
+  bindToController: { list: '=' }
   templateUrl: 'quality-selector/quality-selector.html'
   controller: 'qualityCtrl as quality'
 
 .controller 'qualityCtrl', ($scope) ->
   vm = this
 
-  # I dont knwy but in the template, quality.torrents is empty...
-  # So I fake it for now...
-  vm.fakelist = {"480p": "blablab", "720p": "blablab", "1080p": "blablab"}
-  vm.selected = '480p' unless vm.selected
+  # If no selection or selection is not in the list: get first element in the list
+  for key of vm.list
+    vm.selected = key unless vm.selected and vm.list.indexOf(vm.selected) isnt -1
+    break
 
   vm.openMenu = ($mdOpenMenu, event) ->
     originatorEv = event

@@ -1,10 +1,10 @@
 <div class="episode-container show-info episode-list-show">
     <div class="meta-item">
-        <p rating-container ng-if="show.rating" rating="show.rating"></p> 
+        <p rating-container ng-if="show.rating" rating="show.rating"></p>
         <span class="meta-dot"></span>
         <p>{{ show.genres.join(', ') }}</p>
         <span class="meta-dot"></span>
-        <p>{{ show.year }} - {{ show.status ? show.status : "N/A" }}</p>
+        <p>{{ show.year }}{{ show.type === "show" ? " - "(show.status ? show.status : "N/A") : "" }}</p>
         <span class="meta-dot"></span>
         <p>{{ show.runtime }} min</p>
     </div>
