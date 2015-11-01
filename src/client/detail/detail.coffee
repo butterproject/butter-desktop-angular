@@ -58,6 +58,7 @@ angular.module 'app.detail', []
     api.detail(newTorrent, type).then (resp) ->
 
       vm.data = resp.data
+      vm.data.trakt_url = vm.trakt_url
       vm.config.poster = $filter('traktSize')(resp.data.images.fanart, 'medium', vm.type)
 
       if vm.type is 'show'
