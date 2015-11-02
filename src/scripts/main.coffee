@@ -11,7 +11,7 @@ process.on 'uncaughtException', (error) ->
 
 do ->
   app.on 'ready', ->
-    getPort (err, port) ->
+    getPort().then (port) ->
       global.application = new main manifest, port
 
       global.streamer = require(path.resolve(__dirname, '..', 'server/streamServer.js'))(port)
