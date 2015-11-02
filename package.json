@@ -1,11 +1,12 @@
 {
-  "name": "Butter-Desktop",
-  "homepage": "https://butterproject.github.io/",
+  "name": "Butter",
+  "homepage": "http://butterproject.org/",
   "bugs": "https://github.com/butterproject/butter-desktop-angular/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/butterproject/butter-desktop-angular.git"
   },
+  "license": "GPL-3.0",
   "version": "0.4.0",
   "electronVersion": "0.34.1",
   "description": "There's nothing on TV",
