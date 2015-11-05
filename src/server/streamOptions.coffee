@@ -8,7 +8,7 @@ getport = require 'get-port'
 homePath = process.env[(if process.platform == 'win32' then 'USERPROFILE' else 'HOME')]
 tmpLocation = path.join homePath, 'tmp', 'streamer'
 
-getport (err, newport) ->
+getport().then (newport) ->
   exports.streamOptions.port = newport 
 
 getPeerID = ->
