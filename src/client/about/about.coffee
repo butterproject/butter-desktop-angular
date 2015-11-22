@@ -2,11 +2,6 @@
 
 angular.module 'app.about', []
 
-.directive 'ptAbout', ->
-  bindToController: true
-  templateUrl: 'about/about.html'
-  controller: 'aboutController as about'
-
 .controller 'aboutController', (AdvSettings) ->
   vm = this
 
@@ -35,4 +30,4 @@ angular.module 'app.about', []
       'url': 'https://github.com/butterproject/butter'
       'label': 'Butter GitHub'
 
-
+  return
