@@ -9,12 +9,8 @@ AppMenu = require './app-menu'
 AppWindow = require './app-window'
 
 class Application extends EventEmitter
-  constructor: (manifest, port, options) ->
+  constructor: (@port, @options) ->
     super()
-
-    @manifest = manifest
-    @port = port
-    @options = options
 
     app.on 'window-all-closed', ->
       if process.platform isnt 'darwin'
@@ -23,7 +19,7 @@ class Application extends EventEmitter
     @menu = @createMenu()
     @menu.makeDefault()
 
-    @mainWindow = new AppWindow options, port
+    @mainWindow = new AppWindow @options, @port
     @mainWindow.loadUrl 'file://' + path.resolve __dirname, '..', 'index.html'
 
   createMenu: ->
