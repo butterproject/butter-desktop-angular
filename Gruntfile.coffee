@@ -49,8 +49,13 @@ module.exports = (grunt) ->
       options:
         nospawn : true
       client:
-        files: ['src/client/*.client', 'src/client/**/*.coffee',
-                'src/client/*.html', 'src/client/**/*.html'],
+        files: [
+          'src/client/*.client'
+          'src/client/**/*.coffee'
+          'src/scripts/**/*.coffee'
+          'src/client/*.html'
+          'src/client/**/*.html'
+        ],
         tasks: ['coffee', 'ngtemplates', 'ngAnnotate', 'restart-electron']
       stylus:
         files: ['src/**/*.styl'],
