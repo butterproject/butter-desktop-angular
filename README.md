@@ -1,4 +1,4 @@
-# Butter
+# [Butter](https://github.com/butterproject/butter-desktop-angular)
 [![Build Status](https://travis-ci.org/butterproject/butter-desktop-angular.svg?branch=master)](https://travis-ci.org/butterproject/butter-desktop-angular) [![Dependency Status](https://david-dm.org/butterproject/butter-desktop-angular.svg)](https://david-dm.org/butterproject/butter-desktop-angular) [![devDependency Status](https://david-dm.org/butterproject/butter-desktop-angular/dev-status.svg)](https://david-dm.org/butterproject/butter-desktop-angular#info=devDependencies)
 
 Allow any computer user to watch movies easily streaming from torrents, without any particular knowledge.
@@ -15,7 +15,7 @@ __WARNING__ : This project is in very early stage development and almost nothing
 
 ## Getting Involved
 
-Want to report a bug, request a feature, contribute or translate Butter? Check out our in-depth guide to [Contributing to Butter](CONTRIBUTING.md). We need all the help we can get! You can also join in with our [community](README.md#community) to keep up-to-date and meet other Butterrs.
+Want to report a bug, request a feature, contribute or translate Butter? Check out our in-depth guide to [Contributing to Butter](CONTRIBUTING.md#contributing-to-butter). We need all the help we can get! You can also join in with our [community](README.md#community) to keep up-to-date and meet other Butterrs.
 
 ## Getting Started
 
@@ -43,7 +43,7 @@ Optionally, you may simply run `./make_butter.sh` if you are on a linux or mac b
 
 You can also have a look at the [Dockerfile](Dockerfile) as a build example.
 
-Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md)
+Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md#contributing-to-butter)
 
 ### Generate executable packages
 
