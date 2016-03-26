@@ -8,7 +8,7 @@
   },
   "license": "GPL-3.0",
   "version": "0.4.0",
-  "electronVersion": "0.34.1",
+  "electronVersion": "0.37.2",
   "description": "There's nothing on TV",
   "main": "build/scripts/main.js",
   "devDependencies": {
@@ -45,8 +45,8 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "electron-livereload": "0.0.2",
-    "electron-packager": "^5.1.0",
-    "electron-prebuilt": "0.34.1",
+    "electron-packager": "^5.2.1",
+    "electron-prebuilt": "^0.37.2",
     "express": "^4.13.3",
     "fluent-ffmpeg": "^2.0.1",
     "get-port": "^2.0.0",
