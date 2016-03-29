@@ -130,6 +130,7 @@ angular.module 'app.settings'
   updateEndpoint:
     url: 'https://butterproject.org/'
     index: 0
+    proxies: [ ]
 
   # App Settings
   dbversion: '0.1.0'
