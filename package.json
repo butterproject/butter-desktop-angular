@@ -8,7 +8,7 @@
   },
   "license": "GPL-3.0",
   "version": "0.4.0",
-  "electronVersion": "0.37.2",
+  "electronVersion": "0.37.3",
   "description": "There's nothing on TV",
   "main": "build/scripts/main.js",
   "devDependencies": {
@@ -20,7 +20,7 @@
     "electron-windows-installer": "^1.1.0",
     "electron-livereload": "0.0.2",
     "electron-packager": "^5.1.0",
-    "electron-prebuilt": "0.34.1",
+    "electron-prebuilt": "0.37.3",
     "fs-extra": "^0.24.0",
     "github-releases": "^0.3.0",
     "grunt": "^0.4.5",
