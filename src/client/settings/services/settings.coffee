@@ -130,25 +130,7 @@ angular.module 'app.settings'
   updateEndpoint:
     url: 'https://butterproject.org/'
     index: 0
-    proxies: [
-      {
-        url: 'https://popcorntime.io/'
-        fingerprint: '30:A6:BA:6C:19:A4:D5:C3:5A:E8:F1:56:C6:B4:E1:DC:EF:DD:EC:8C'
-      }
-      {
-        url: 'https://popcorntime.re/'
-        fingerprint: '30:A6:BA:6C:19:A4:D5:C3:5A:E8:F1:56:C6:B4:E1:DC:EF:DD:EC:8C'
-      }
-      {
-        url: 'https://popcorntime.cc/'
-        fingerprint: '30:A6:BA:6C:19:A4:D5:C3:5A:E8:F1:56:C6:B4:E1:DC:EF:DD:EC:8C'
-      }
-      {
-        url: 'https://its.pt/'
-        ssl: false
-        fingerprint: /301/
-      }
-    ]
+    proxies: [ ]
 
   # App Settings
   dbversion: '0.1.0'
