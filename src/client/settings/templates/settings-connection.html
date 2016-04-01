@@ -10,7 +10,7 @@
         </md-input-container>
         
         <md-input-container>
-            <label>Connection Limit</label>
+            <label><i class="material-icons">rss_feed</i> Connection Limit</label>
             <input id="connectionLimit" type="text" size="20" name="connectionLimit" ng-model="settings.config.connectionLimit"/>
         </md-input-container>
         
@@ -28,8 +28,8 @@
             <label>Overall Ratio</label>
             <input type="text" size="20" name="overallRatio" ng-init="overallRatio = settings.overallRatio()" ng-model="overallRatio">
             <em>
-              {{ settings.config.totalDownloaded | fileSize }} <i class="fa fa-arrow-circle-down"></i>
-              {{ settings.config.totalUploaded | fileSize }} <i class="fa fa-arrow-circle-up"></i>
+              {{ settings.config.totalDownloaded | fileSize }} <i class="material-icons">arrow_upward</i>
+              {{ settings.config.totalUploaded | fileSize }} <i class="material-icons">arrow_downward</i>
             </em>
         </md-input-container>
         
