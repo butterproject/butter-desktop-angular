@@ -10,7 +10,7 @@
             Butter is the result of many developers and designers putting a bunch of APIs together <br />
             to make the experience of watching torrent movies as simple as possible.<br />
             We are an open source project. We are from all over the world. We love our movies. <br />
-            And boy, do we love Popcorn with Butter.
+            And boy, do we love our Popcorn with Butter.
             </p>
         </div>
 
@@ -31,13 +31,10 @@
             <p>Made with <span style="color:#e74c3c;">&#10084;</span> by a bunch of geeks from All Around The World</p>
         </div>
 
-        <div id="changelog">
+        <div id="changelog" controller="changelogController">
             <h2>Changelog</h2>
             <pre>
-              <p ng-repeat="release in about.releases">
-                {{release.name}} </br>
-                {{release.notes}} </br>
-              </p>
+              {{ content }}
             </pre>
         </div>
 
