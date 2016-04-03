@@ -1,0 +1,13 @@
+body {
+    color: #FAFAFA;
+    background-color: #111214;
+    cursor: default;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    img {
+        pointer-events: none;
+    }
+    text-rendering: optimizelegibility;
+}
