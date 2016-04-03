@@ -12,8 +12,8 @@ class AppWindow extends EventEmitter
 
     defaults =
       title: 'Butter'
-      'min-width': 520
-      'min-height': 520
+      'minWidth': 520
+      'minHeight': 520
       frame: false
       resizable: true
       show: false
