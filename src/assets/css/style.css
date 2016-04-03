@@ -6,8 +6,8 @@ body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    text-rendering: optimizelegibility;
     img {
         pointer-events: none;
     }
-    text-rendering: optimizelegibility;
 }
