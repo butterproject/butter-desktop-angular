@@ -7,6 +7,7 @@ angular.module 'app.about', []
 
   vm.name = AdvSettings.get('branding').name
 
+# Social Links and Buttons
   vm.social_buttons =
     'website':
       'url': 'http://butterproject.org'
@@ -18,10 +19,10 @@ angular.module 'app.about', []
       'url': 'http://discuss.butterproject.org'
       'label': 'Butter Forum'
     'facebook':
-      'url': 'http://www.fb.com/ButterProjectOrg'
+      'url': 'https://www.facebook.com/ButterProjectOrg'
       'label': 'Butter Facebook'
     'twitter':
-      'url': 'http://twitter.com/butterproject'
+      'url': 'https://twitter.com/butterproject'
       'label': 'Butter Twitter'
     'google-plus':
       'url': 'https://plus.google.com/communities/111003619134556931561'
@@ -29,5 +30,13 @@ angular.module 'app.about', []
     'github':
       'url': 'https://github.com/butterproject/butter'
       'label': 'Butter GitHub'
+
+.controller 'changelogController', ($scope, $http) ->
+  $http.get('../../CHANGELOG.md').then ((response) ->
+    $scope.content = response.data
+    return
+  ), (response) ->
+    $scope.content = 'No Changelog file found!'
+    return
 
   return
