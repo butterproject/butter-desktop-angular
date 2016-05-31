@@ -16,7 +16,7 @@ angular.module 'app.about', []
       'url': 'http://blog.butterproject.org'
       'label': 'Butter Blog'
     'discuss':
-      'url': 'http://discuss.butterproject.org'
+      'url': 'https://www.reddit.com/r/ButterProject'
       'label': 'Butter Forum'
     'facebook':
       'url': 'https://www.facebook.com/ButterProjectOrg'
