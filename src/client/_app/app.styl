@@ -10,6 +10,18 @@ $FilterBarHeight = 35px
 $HeaderHeight = 65px
 $MovieListPadding = calc(100% - 67px)
 
+body
+    color: #FAFAFA
+    background-color: #111214
+    cursor: default
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -webkit-user-drag: none
+    text-rendering: optimizelegibility
+    img
+        pointer-events: none
+
 *
     outline 0
     -moz-user-select none
@@ -69,29 +81,29 @@ scrollable()
     &::-webkit-scrollbar-track-piece
         display none
 
-.main-container 
+.main-container
   padding: 25px
   max-height: calc(100vh - 64px)
   overflow-x: hidden
   overflow-y: auto
 
-#main-view.ng-enter, #main-view.ng-leave 
+#main-view.ng-enter, #main-view.ng-leave
   position: absolute
   left: 0
   right: 0
   transition opacity .3s ease-in-out
 
-#main-view.ng-enter 
+#main-view.ng-enter
   opacity: 0
 
-#main-view section  
-  z-index: 0 
+#main-view section
+  z-index: 0
 
-#main-view.ng-enter-active 
+#main-view.ng-enter-active
   opacity: 1
 
-#main-view.ng-leave 
+#main-view.ng-leave
   opacity: 1
 
-#main-view.ng-leave-active 
+#main-view.ng-leave-active
   opacity: 0
